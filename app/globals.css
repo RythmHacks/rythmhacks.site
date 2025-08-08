@@ -4,10 +4,16 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --theme-blue: var(--theme-blue);
+  --theme-pink: var(--theme-pink);
+  --theme-light-blue: var(--theme-light-blue);
+  --theme-dark-blue: var(--theme-dark-blue);
+  --theme-purple: var(--theme-purple);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-title: var(--font-krub-bold);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -44,6 +50,11 @@
 }
 
 :root {
+  --theme-blue: #1c1778;
+  --theme-pink: #8b00aa;
+  --theme-light-blue: #2498e0;
+  --theme-dark-blue: #00194d;
+  --theme-purple: #4d2569;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -117,6 +128,15 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-no-repeat bg-cover bg-gradient-to-b from-[#020407] to-[#081226] text-foreground;
   }
+}
+
+.title-gradient {
+  background-image: linear-gradient(
+    to right,
+    #FFC2F2 34%,
+    #82C8F3 50%,
+    #3386E5 100%
+  );
 }
