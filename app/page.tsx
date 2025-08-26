@@ -111,11 +111,11 @@ export default function Home() {
         <h2 className="text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-blue-500">
           Our Sponsors
         </h2>
-        <p className="mb-12 max-w-2xl mx-auto text-xl text-gray-300 leading-relaxed">
-          We are incredibly grateful to our amazing sponsors who make RhythmHacks 2025 possible! 
+        <p className="mb-12 max-w-2xl mx-auto text-2xl text-gray-300 leading-relaxed">
+          We are incredibly grateful to our amazing sponsors who make RhythmHacks 2025 into a reality! 
           Your support empowers the next generation of innovators and creators. 
-          <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-400 font-semibold">
-            Thank you for believing in our community! 💜
+          <span className="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-pink-200 to-blue-400 font-bold">
+            Thank you for believing in our community! 
           </span>
         </p>
 
@@ -136,7 +136,7 @@ export default function Home() {
               >
                 <div className={`absolute inset-0 flex items-center justify-center ${
                   ['Certopus', 'NordVPN'].includes(sponsor.name)
-                    ? 'p-2'
+                    ? 'p-0'
                     : ['NordPass', 'Interview Cake', 'NordProtect'].includes(sponsor.name) 
                       ? 'p-4' 
                       : 'p-8'
@@ -148,7 +148,6 @@ export default function Home() {
                   />
                 </div>
               </a>
-              <p className="mt-4 text-lg font-semibold text-white">{sponsor.name}</p>
             </div>
           ))}
         </div>
