@@ -1,9 +1,8 @@
 import Image from 'next/image';
 
-// Navigation items (unchanged)
 const navItems = ['About', 'Sponsors', 'Team', 'FAQ', 'Schedule'];
 
-// Sponsor data
+// Sponsor 
 const sponsors = [
   {
     name: "Certopus",
@@ -58,11 +57,11 @@ const sponsors = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center p-4 relative overflow-hidden">
-      {/* Background blobs */}
+      {/* Background elements (unchanged) */}
       <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
 
-      {/* Headphones */}
+      {/* Headphone Image - moved to outside the <main> tag to allow for absolute positioning */}
       <Image
         src="/headphones.png"
         alt="RythmHacks Headphones"
@@ -86,7 +85,7 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* Hero Section */}
+      {/* Main content */}
       <main className="flex-grow flex flex-col items-center justify-center z-10">
         <div className="text-center relative">
           <h1 className="text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500">
