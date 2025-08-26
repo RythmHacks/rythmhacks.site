@@ -21,13 +21,16 @@ export default function Home() {
           </h1>
         </div>
 
+        {/* subtitle */}
         <div>
-          <h4
-            className={`${krubItalic.className} text-[40px] text-white`}
-          >
+          <h4 className={`${krubItalic.className} text-[40px] text-white`}>
             Experience the magic of tech
           </h4>
         </div>
+      </div>
+
+      <div>
+  
       </div>
     </>
   );

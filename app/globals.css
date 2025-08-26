@@ -140,3 +140,7 @@
     #3386E5 100%
   );
 }
+
+.box-grandient {
+  background-image: linear-gradient(to bottom left, #3286E5 0%, #74BCF1 22%, #FFA3EB 74%, #EF77D5 95%);
+}
