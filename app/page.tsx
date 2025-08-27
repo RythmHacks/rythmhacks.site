@@ -1,11 +1,44 @@
+"use client";
+
 import Image from "next/image";
 import AlgorithmVisual from "./AlgorithmVisual";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 const navItems = ["About", "Sponsors", "Team", "FAQ", "Schedule"];
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const dropdownItems = [
+    {
+      question: "What is a hackathon?",
+      answer: "RythmHacks is an exciting hackathon where technology meets creativity. Participants build innovative projects while experiencing the rhythm of coding."
+    },
+    {
+      question: "Do I need a team?",
+      answer: "You can totally go solo! If you prefer to work by yourself, you can totally work by yourself. If you'd also like a team, RythmHacks is open to helping you find one!"
+    },
+    {
+      question: "Who can attend?",
+      answer: "All skill levels are welcome! Whether you're a beginner or an experienced developer, there's a place for you at RythmHacks."
+    },
+    {
+      question: "Will food be provided?",
+      answer: "Of course! Thanks to the generous support of our sponsors, we are able to provide breakfast, lunch, and dinner along with some snacks to keep you fueled up during the hack!"
+    },
+    {
+      question: "What if I can’t code?",
+      answer: "Don't worry! RythmHacks welcomes everyone and gives hackers the chance to showcase their unique skills! You will find workshops, mentors, and a welcoming community ready to help.  RythmHacks is the perfect place to learn, grow, and bring your ideas to life!"
+    },
+    {
+      question: "Can I stay overnight?",
+      answer: "Absolutely! You're welcome to stay overnight for the duration of the hack! Just don't forget to bring your necessities if you plan to get a good night's sleep!"
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white flex flex-col items-center items-top p-4 relative overflow-hidden">
       {/* Algorithm pattern down the left side */}
       <div className="absolute left-0 top-0 h-full w-48 flex flex-col justify-start items-center opacity-60 pointer-events-none">
         <AlgorithmVisual />
@@ -57,6 +90,65 @@ export default function Home() {
           APPLY NOW!
         </button>
       </main>
+
+      {/* FAQ Section */}
+      <div className="self-start py-5 px-10 pb-10">
+        <div className="flex items-center gap-2">
+          <svg width="30" height="28" className="drop-shadow-[0_0_10px_rgba(147,51,234,0.8)] rotate-15">
+            <polygon 
+              points="15,2 2,26 28,26"
+              fill="transparent"
+              stroke="rgb(147 51 234)"
+              strokeWidth="4"
+            />
+          </svg>
+            <h1 className="text-5xl font-bold text-white">FAQ</h1>
+        </div>
+      </div>
+
+      <div className="max-w-3xl mx-auto p-6 grid grid-cols-2 gap-y-10 gap-x-20">
+        {dropdownItems.map((item, index) => (
+          <DropdownItem 
+            key={index} 
+            question={item.question} 
+            answer={item.answer} 
+          />
+        ))}
+      </div>
+
+      
+    </div>
+  );
+}
+
+function DropdownItem({ question, answer }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="w-full">
+      {/* Speech bubble button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full p-6 rounded-3xl bg-gradient-to-b from-purple-500 to-pink-400 text-white text-left shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] relative group border-2 border-purple-400 cursor-pointer"
+      >
+        <div className="flex items-center justify-between">
+          <span className="text-lg font-semibold pr-4">{question}</span>
+          <ChevronDown 
+            className={`w-6 h-6 transition-transform duration-300 flex-shrink-0 ${
+              isOpen ? 'rotate-180' : 'rotate-0'
+            }`}
+          />
+        </div>
+      </button>
+
+      {/* Dropdown content with animation */}
+      <div className={`overflow-hidden transition-all duration-300 ${
+        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+      }`}>
+        <div className="mt-4 p-6 rounded-2xl bg-gray-800 text-gray-300 shadow-inner">
+          <p className="leading-relaxed">{answer}</p>
+        </div>
+      </div>
     </div>
   );
 }
