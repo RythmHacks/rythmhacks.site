@@ -210,7 +210,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto p-6 grid grid-cols-2 gap-y-10 gap-x-20">
+      <div className="max-w-3xl mx-auto p-6 grid grid-cols-2 gap-y-10 gap-x-20 pb-20">
         {dropdownItems.map((item, index) => (
           <DropdownItem 
             key={index} 
@@ -251,3 +251,6 @@ function DropdownItem({ question, answer }) {
           <p className="leading-relaxed">{answer}</p>
         </div>
       </div>
+    </div>
+  );
+}
