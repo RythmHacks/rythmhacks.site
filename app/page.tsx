@@ -6,14 +6,14 @@ const navItems = ['About', 'Sponsors', 'Team', 'FAQ', 'Schedule'];
 
 // Sponsor data
 const sponsors = [
-  { name: "Certopus", logo: "/sponsors/certopus.png", url: "https://certopus.com", bgColor: "#FFFFFF" },
-  { name: "NordProtect", logo: "/sponsors/Logo-3.png", url: "https://nordprotect.com/", bgColor: "bg-gradient-to-tr from-yellow-400/30 to-red-500/30" },
-  { name: "NordPass", logo: "/sponsors/nordpass.png", url: "https://nordpass.com", bgColor: "#4668D6" },
-  { name: "Interview Cake", logo: "/sponsors/InterviewCake.png", url: "https://www.interviewcake.com", bgColor: "#5AB8D8" },
-  { name: "NordVPN", logo: "/sponsors/NordVPN.png", url: "https://nordvpn.com", bgColor: "bg-gradient-to-tr from-purple-500/50 to-pink-500/50" },
-  { name: "Saily", logo: "/sponsors/saily.png", url: "https://saily.com/site/", bgColor: "#FFD166" },
-  { name: "AoPS", logo: "/sponsors/AoPS.png", url: "https://artofproblemsolving.com/company", bgColor: "#F0F4F8" },
-  { name: "XYZ", logo: "/sponsors/XYZ.png", url: "https://gen.xyz/", bgColor: "#6A0DAD" },
+  { name: "Certopus", logo: "/certopus.png", url: "https://certopus.com", bgColor: "#FFFFFF" },
+  { name: "NordProtect", logo: "/Logo-3.png", url: "https://nordprotect.com/", bgColor: "bg-gradient-to-tr from-yellow-400/30 to-red-500/30" },
+  { name: "NordPass", logo: "/nordpass.png", url: "https://nordpass.com", bgColor: "#4668D6" },
+  { name: "Interview Cake", logo: "/InterviewCake.png", url: "https://www.interviewcake.com", bgColor: "#5AB8D8" },
+  { name: "NordVPN", logo: "/NordVPN.png", url: "https://nordvpn.com", bgColor: "bg-gradient-to-tr from-purple-500/50 to-pink-500/50" },
+  { name: "Saily", logo: "/saily.png", url: "https://saily.com/site/", bgColor: "#FFD166" },
+  { name: "AoPS", logo: "/AoPS.png", url: "https://artofproblemsolving.com/company", bgColor: "#F0F4F8" },
+  { name: "XYZ", logo: "/XYZ.png", url: "https://gen.xyz/", bgColor: "#6A0DAD" },
 ];
 
 export default function Home() {
