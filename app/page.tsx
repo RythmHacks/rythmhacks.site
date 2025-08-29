@@ -3,7 +3,9 @@
 import Image from "next/image";
 import AlgorithmVisual from "./AlgorithmVisual";
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, HamburgerIcon } from "lucide-react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
 
 // Navigation items
 const navItems = ['About', 'Sponsors', 'Team', 'FAQ', 'Schedule'];
@@ -50,16 +52,20 @@ export default function Home() {
     }
   ];
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    setIsOpen(false)
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center p-4 relative overflow-hidden">
       
       {/* Algorithm pattern down the left side */}
       <div className="absolute left-0 top-0 h-full w-48 flex flex-col justify-start items-center opacity-60 pointer-events-none overflow-hidden">
         <div className="-mt-[800px]"><AlgorithmVisual /></div>
-        <AlgorithmVisual /><AlgorithmVisual /><AlgorithmVisual /><AlgorithmVisual /><AlgorithmVisual />
-        <AlgorithmVisual /><AlgorithmVisual /><AlgorithmVisual /><AlgorithmVisual /><AlgorithmVisual />
-        <AlgorithmVisual /><AlgorithmVisual /><AlgorithmVisual /><AlgorithmVisual /><AlgorithmVisual />
-        <AlgorithmVisual /><AlgorithmVisual /><AlgorithmVisual /><AlgorithmVisual /><AlgorithmVisual />
       </div>
 
       {/* Background blobs */}
@@ -70,46 +76,67 @@ export default function Home() {
       <Image
         src="/headphones.png"
         alt="RythmHacks Headphones"
-        width={300}
-        height={300}
-        className="absolute top-8 left-8 z-20"
+        width={200}
+        height={200}
+        className="absolute top-8 left-8 z-20 hidden lg:block"
       />
 
       {/* Navigation */}
-      <header className="w-full flex justify-end mb-16 z-10">
-        <nav className="flex space-x-2">
-          {navItems.map((item) => (
-            <button
-              key={item}
-              className="bg-gradient-to-r from-pink-400 to-sky-600 text-white px-8 py-4 rounded-lg font-semibold text-xl"
-            >
-              {item}
+      <header className="w-full flex justify-end mb-30 z-9999 ">
+        <nav className="space-x-2">
+          <div className="hidden md:flex">
+            {navItems.map((item) => (
+              <button
+                key={item}
+                className="bg-gradient-to-r from-pink-300 to-sky-600 text-white px-8 py-4 mx-2 rounded-lg font-semibold text-[20px] hover:drop-shadow-[0_0_5px_rgba(255,255,255)] hover:ring-1 linear duration-200"
+                onClick={() => {scrollToSection(item)}}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+          {/* Mobile Menu */}
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)}>
+              {isOpen ? <IoMdClose size={36} color="white"/> : <GiHamburgerMenu size={36} color="white"/>}
             </button>
-          ))}
+          </div>
+
+          {isOpen && (
+            <div className="absolute top-8 right-20 z-[9999] flex flex-col items-center md:hidden gap-4 bg-black/50 p-8">
+              {navItems.map((item) => (
+                <button
+                key={item}
+                className=" z-[9999] w-full bg-gradient-to-r from-pink-300 to-sky-600 text-white px-8 py-4 mx-2 rounded-lg font-semibold text-[20px] hover:drop-shadow-[0_0_5px_rgba(255,255,255)] hover:ring-1 linear duration-200"
+                onClick={() => {scrollToSection(item)}}
+              > {item} </button>
+              ))}
+            </div>
+          )}
         </nav>
       </header>
 
       {/* Hero Section */}
       <main className="flex-grow flex flex-col items-center justify-center z-10">
-        <div className="text-center">
-          <h1 className="text-8xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-sky-600">
+        <div className="text-center mb-20">
+          <h1 className="text-8xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-sky-600 ">
             RythmHacks
           </h1>
-          <p className="text-lg mt-2 text-gray-400">Experience the magic of tech</p>
+          <p className="mt-2 text-gray-400 text-3xl ">Experience the magic of tech</p>
         </div>
 
-        <h2 className="text-4xl font-semibold mt-16 mb-8">Coming soon...</h2>
+        <h2 className="text-5xl font-semibold mt-16 mb-30">Coming soon...</h2>
 
-        <button className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-8 py-4 rounded-full text-lg font-semibold">
+        <button className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-8 py-4 rounded-full text-2xl font-semibold hover:drop-shadow-[0_0_5px_rgba(255,255,255)] hover:ring-1 linear duration-200">
           APPLY NOW!
         </button>
       </main>
 
       {/* About Section */}
-      <section className="w-full max-w-6xl mx-auto px-8 py-16 z-10 mt-96">
+      <section id="About" className="w-full max-w-6xl mx-auto px-8 py-16 z-10 mt-40">
         <div className="flex items-start gap-8 mb-12">
           <div className="flex items-center gap-4">
-            <h2 className="text-5xl font-bold">About</h2>
+            <h2 className="text-7xl font-bold">About</h2>
           </div>
         </div>
 
@@ -131,7 +158,7 @@ export default function Home() {
             <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg p-1">
               <div className="bg-black rounded-lg p-4">
                 <img 
-                  src="/about-image-1.jpg" 
+                  src="/about-team-1.jpg" 
                   alt="RythmHacks participants holding awards"
                   className="w-full h-64 object-cover rounded-lg"
                 />
@@ -141,7 +168,7 @@ export default function Home() {
             <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg p-1">
               <div className="bg-black rounded-lg p-4">
                 <img 
-                  src="/about-image-2.jpg" 
+                  src="/about-team-2.jpg" 
                   alt="Participants collaborating at RythmHacks"
                   className="w-full h-64 object-cover rounded-lg"
                 />
@@ -152,8 +179,8 @@ export default function Home() {
       </section>
 
       {/* Sponsors Section */}
-      <section id="sponsors" className="w-full py-16 bg-black text-center z-10">
-        <h2 className="text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-blue-500">
+      <section id="Sponsors" className="w-full py-16 bg-black text-center z-10">
+        <h2 className="text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-blue-500">
           Our Sponsors
         </h2>
         <p className="mb-12 max-w-2xl mx-auto text-2xl text-gray-300 leading-relaxed">
@@ -196,7 +223,7 @@ export default function Home() {
       </section>
       
       {/* FAQ Section */}
-      <div className="self-start py-5 px-10 pb-10">
+      <div id="FAQ" className="self-start py-5 px-10 pb-10">
         <div className="flex items-center gap-2">
           <svg width="30" height="28" className="drop-shadow-[0_0_10px_rgba(147,51,234,0.8)] rotate-15">
             <polygon 
