@@ -119,9 +119,17 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .pt-serif-regular {
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 }
 
 html {
   scroll-behavior: smooth;
   background-color: black;
 }
+

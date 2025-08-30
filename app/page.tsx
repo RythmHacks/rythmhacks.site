@@ -6,6 +6,7 @@ import { useState } from "react";
 import { ChevronDown, HamburgerIcon } from "lucide-react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
+import { profile } from "console";
 
 // Navigation items
 const navItems = ['About', 'Sponsors', 'Team', 'FAQ', 'Schedule'];
@@ -58,6 +59,15 @@ export default function Home() {
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  const profileImg = (url, name) => {
+    return (
+      <div className="flex flex-col items-center">
+        <img src={url}alt={name} className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+        <p className="mt-2 text-2xl pt-serif-regular text-gray-300">{name}</p>
+      </div>
+    )
   }
 
   return (
@@ -242,8 +252,8 @@ export default function Home() {
                 Co-Leads
             </h3>
             <div className="gap-6 w-full justify-center flex m-5 mb-15" >
-              <img src="/Team_Photos/download.png" alt="Nabira Rashid" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
-              <img src="/Team_Photos/" alt="Irene Wang" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              {profileImg("/Team_Photos/nabira.png", "Nabira Rashid")}
+              {profileImg("/Team_Photos/irene.png", "Irene Wang")}
             </div>
 
 
@@ -251,11 +261,11 @@ export default function Home() {
                 Tech Team
             </h3>
             <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center" >
-              <img src="/Team_Photos/" alt="Hargun" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
-              <img src="/Team_Photos/" alt="Sharon Basovich" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
-              <img src="/Team_Photos/" alt="Jerry Liu" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
-              <img src="/Team_Photos/" alt="Jacob" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
-              <img src="/Team_Photos/" alt="Michael Zang" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              {profileImg("/Team_Photos/", "Hargun")}
+              {profileImg("/Team_Photos/sharon.png", "Sharon Basovich")}
+              {profileImg("/Team_Photos/jerry.png", "Jerry Liu")}
+              {profileImg("/Team_Photos/", "Jacob")}
+              {profileImg("/Team_Photos/", "Micheal")}
             </div>
 
 
@@ -263,20 +273,20 @@ export default function Home() {
                 Marketing Team
             </h3>
             <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center" >
-              <img src="/Team_Photos/" alt="Nutana Simhadri" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
-              <img src="/Team_Photos/" alt="Pramod Chavali" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
-              <img src="/Team_Photos/" alt="Amy Peng" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              {profileImg("/Team_Photos/pramod.png", "Pramod Chavali")}
+              {profileImg("/Team_Photos/nutana.png", "Nutana Simhadri")}
+              {profileImg("/Team_Photos/amy.png", "Amy Peng")}
             </div>
 
             <h3 className="mt-3 text-transparent text-4xl bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 font-bold">
                 Sponsorships & Logistics Team
             </h3>
             <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center" >
-              <img src="/Team_Photos/" alt="Geeth Gudavalli" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
-              <img src="/Team_Photos/" alt="James Yang" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
-              <img src="/Team_Photos/" alt="Maithili" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
-              <img src="/Team_Photos/" alt="Saanvi" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
-              <img src="/Team_Photos/" alt="Alan" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              {profileImg("/Team_Photos/", "Maithili")}
+              {profileImg("/Team_Photos/geeth.png", "Geeth Gudavalli")}
+              {profileImg("/Team_Photos/james.png", "James Yang")}
+              {profileImg("/Team_Photos/", "Alan")}
+              {profileImg("/Team_Photos/", "Saanvi")}
             </div>
 
           </div>
