@@ -221,11 +221,72 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Team Section */}
+      <div id="Team" className=" py-5 px-12 pl-8 pb-10 w-full my-25">
+        <div className="flex items-center">
+          {/* Square */}
+          <svg width="35" height="35" viewBox="0 0 40 40" className="drop-shadow-[0_0_10px_rgba(147,51,234,0.8)]">
+            <polygon
+              points="6,6 34,6 34,34 6,34"
+              fill="transparent"
+              stroke="rgb(147 51 234)"
+              strokeWidth="4"
+            />
+          </svg>
+            <h1 className="pl-2 text-6xl font-bold text-white">Team</h1>
+        </div>
+        <div className="justify-center w-full flex">
+          <div className="flex flex-col columns-1 w-full items-center">
+            <h3 className="mt-3 text-transparent text-4xl bg-clip-text bg-gradient-to-r from-fuchsia-400 to-pink-300 font-bold">
+                Co-Leads
+            </h3>
+            <div className="gap-6 w-full justify-center flex m-5 mb-15" >
+              <img src="/Team_Photos/download.png" alt="Nabira Rashid" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              <img src="/Team_Photos/" alt="Irene Wang" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+            </div>
+
+
+            <h3 className="mt-3 text-transparent text-4xl bg-clip-text bg-gradient-to-r from-pink-300 to-rose-400 font-bold">
+                Tech Team
+            </h3>
+            <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center" >
+              <img src="/Team_Photos/" alt="Hargun" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              <img src="/Team_Photos/" alt="Sharon Basovich" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              <img src="/Team_Photos/" alt="Jerry Liu" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              <img src="/Team_Photos/" alt="Jacob" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              <img src="/Team_Photos/" alt="Michael Zang" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+            </div>
+
+
+            <h3 className="mt-3 text-transparent text-4xl bg-clip-text bg-gradient-to-r from-rose-500 to-purple-300 font-bold">
+                Marketing Team
+            </h3>
+            <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center" >
+              <img src="/Team_Photos/" alt="Nutana Simhadri" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              <img src="/Team_Photos/" alt="Pramod Chavali" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              <img src="/Team_Photos/" alt="Amy Peng" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+            </div>
+
+            <h3 className="mt-3 text-transparent text-4xl bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 font-bold">
+                Sponsorships & Logistics Team
+            </h3>
+            <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center" >
+              <img src="/Team_Photos/" alt="Geeth Gudavalli" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              <img src="/Team_Photos/" alt="James Yang" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              <img src="/Team_Photos/" alt="Maithili" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              <img src="/Team_Photos/" alt="Saanvi" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+              <img src="/Team_Photos/" alt="Alan" className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+            </div>
+
+          </div>
+        </div>
+      </div>
       
       {/* FAQ Section */}
       <div id="FAQ" className="self-start py-5 px-10 pb-10">
-        <div className="flex items-center gap-2">
-          <svg width="30" height="28" className="drop-shadow-[0_0_10px_rgba(147,51,234,0.8)] rotate-15">
+        <div className="flex items-center">
+          <svg width="43" height="39" className="drop-shadow-[0_0_10px_rgba(147,51,234,0.8)] rotate-15">
             <polygon 
               points="15,2 2,26 28,26"
               fill="transparent"
@@ -233,7 +294,7 @@ export default function Home() {
               strokeWidth="4"
             />
           </svg>
-            <h1 className="text-5xl font-bold text-white">FAQ</h1>
+            <h1 className="text-6xl font-bold text-white">FAQ</h1>
         </div>
       </div>
 
