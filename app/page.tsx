@@ -264,7 +264,7 @@ export default function Home() {
               {profileImg("/Team_Photos/hargun.png", "Hargun")}
               {profileImg("/Team_Photos/sharon.png", "Sharon Basovich")}
               {profileImg("/Team_Photos/jerry.png", "Jerry Liu")}
-              {profileImg("/Team_Photos/jacob.png", "Jacob")}
+              {profileImg("/Team_Photos/jacob.png", "Jacob Blais")}
               {profileImg("/Team_Photos/micheal.png", "Micheal Zang")}
             </div>
 
@@ -282,11 +282,11 @@ export default function Home() {
                 Sponsorships & Logistics Team
             </h3>
             <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center" >
-              {profileImg("/Team_Photos/", "Maithili")}
+              {profileImg("/Team_Photos/", "Maithili Rastogi")}
               {profileImg("/Team_Photos/geeth.png", "Geeth Gudavalli")}
               {profileImg("/Team_Photos/james.png", "James Yang")}
-              {profileImg("/Team_Photos/", "Alan")}
-              {profileImg("/Team_Photos/saanvi.png", "Saanvi")}
+              {profileImg("/Team_Photos/alan.png", "Alan Liu")}
+              {profileImg("/Team_Photos/saanvi.png", "Saanvi Lal")}
             </div>
 
           </div>
