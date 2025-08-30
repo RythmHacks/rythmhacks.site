@@ -261,7 +261,7 @@ export default function Home() {
                 Tech Team
             </h3>
             <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center" >
-              {profileImg("/Team_Photos/hargun.png", "Hargun")}
+              {profileImg("/Team_Photos/hargun.png", "Hargun Badhesha")}
               {profileImg("/Team_Photos/sharon.png", "Sharon Basovich")}
               {profileImg("/Team_Photos/jerry.png", "Jerry Liu")}
               {profileImg("/Team_Photos/jacob.png", "Jacob Blais")}
