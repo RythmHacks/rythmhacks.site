@@ -23,6 +23,39 @@ const sponsors = [
   { name: "XYZ", logo: "/XYZ.png", url: "https://gen.xyz/", bgColor: "#6A0DAD" },
 ];
 
+
+function DropdownItem({ question, answer }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="w-full">
+      {/* Speech bubble button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full p-6 rounded-3xl bg-gradient-to-b from-purple-500 to-pink-400 text-white text-left shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] relative group border-2 border-purple-400 cursor-pointer"
+      >
+        <div className="flex items-center justify-between">
+          <span className="text-lg font-semibold pr-4">{question}</span>
+          <ChevronDown 
+            className={`w-6 h-6 transition-transform duration-300 flex-shrink-0 ${
+              isOpen ? 'rotate-180' : 'rotate-0'
+            }`}
+          />
+        </div>
+      </button>
+
+      {/* Dropdown content with animation */}
+      <div className={`overflow-hidden transition-all duration-300 ${
+        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+      }`}>
+        <div className="mt-4 p-6 rounded-2xl bg-gray-800 text-gray-300 shadow-inner">
+          <p className="leading-relaxed">{answer}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -53,7 +86,7 @@ export default function Home() {
     }
   ];
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (id:string) => {
     const section = document.getElementById(id);
     setIsOpen(false)
     if (section) {
@@ -61,7 +94,7 @@ export default function Home() {
     }
   }
 
-  const profileImg = (url, name) => {
+  const profileImg = (url:string, name:string) => {
     return (
       <div className="flex flex-col items-center">
         <img src={url}alt={name} className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
@@ -316,38 +349,6 @@ export default function Home() {
             answer={item.answer} 
           />
         ))}
-      </div>
-    </div>
-  );
-}
-
-function DropdownItem({ question, answer }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="w-full">
-      {/* Speech bubble button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-6 rounded-3xl bg-gradient-to-b from-purple-500 to-pink-400 text-white text-left shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] relative group border-2 border-purple-400 cursor-pointer"
-      >
-        <div className="flex items-center justify-between">
-          <span className="text-lg font-semibold pr-4">{question}</span>
-          <ChevronDown 
-            className={`w-6 h-6 transition-transform duration-300 flex-shrink-0 ${
-              isOpen ? 'rotate-180' : 'rotate-0'
-            }`}
-          />
-        </div>
-      </button>
-
-      {/* Dropdown content with animation */}
-      <div className={`overflow-hidden transition-all duration-300 ${
-        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-      }`}>
-        <div className="mt-4 p-6 rounded-2xl bg-gray-800 text-gray-300 shadow-inner">
-          <p className="leading-relaxed">{answer}</p>
-        </div>
       </div>
     </div>
   );
