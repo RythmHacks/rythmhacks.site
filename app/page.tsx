@@ -315,7 +315,7 @@ export default function Home() {
                 Sponsorships & Logistics Team
             </h3>
             <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center" >
-              {profileImg("/Team_Photos/", "Maithili Rastogi")}
+              {profileImg("/Team_Photos/maithili.png", "Maithili Rastogi")}
               {profileImg("/Team_Photos/geeth.png", "Geeth Gudavalli")}
               {profileImg("/Team_Photos/james.png", "James Yang")}
               {profileImg("/Team_Photos/alan.png", "Alan Liu")}
