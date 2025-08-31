@@ -3,10 +3,10 @@
 import Image from "next/image";
 import AlgorithmVisual from "./AlgorithmVisual";
 import { useState } from "react";
-import { ChevronDown, HamburgerIcon } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
-import { profile } from "console";
+// ...existing code...
 
 // Navigation items
 const navItems = ['About', 'Sponsors', 'Team', 'FAQ', 'Schedule'];
@@ -24,7 +24,7 @@ const sponsors = [
 ];
 
 
-function DropdownItem({ question, answer }) {
+function DropdownItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
