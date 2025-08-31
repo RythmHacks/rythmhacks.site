@@ -186,7 +186,7 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <p className="text-xl font-semibold text-white leading-relaxed">
-              RythmHacks is back for 2025! Join us for 36 hours of the classic hackathon experience: Building projects attending awesome workshops, and sleep-deprived madness.
+              RythmHacks is back for 2025! Join us for 24 hours of the classic hackathon experience: Building projects attending awesome workshops, and sleep-deprived madness.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed mb-4">
               With hundreds of dollars in prizes, sponsors of all kinds, and a workshop for everyone,{" "}
