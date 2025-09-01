@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "RythmHacks",
   description: "Official site for RythmHacks hackathon",
+  icons: "favicon.ico"
 };
 
 export default function RootLayout({
