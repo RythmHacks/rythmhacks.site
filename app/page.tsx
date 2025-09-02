@@ -11,7 +11,7 @@ import { IoMdClose } from "react-icons/io";
 // Navigation items
 const navItems = ['About', 'Sponsors', 'Team', 'FAQ', 'Schedule'];
 
-// Sponsor data with consistent padding classes
+// Sponsor data
 const sponsors = [
   { name: "Certopus", logo: "/certopus.png", url: "https://certopus.com", bgColor: "#FFFFFF", padding: "p-0" },
   { name: "NordProtect", logo: "/Logo-3.png", url: "https://nordprotect.com/", bgColor: "bg-gradient-to-tr from-yellow-400/30 to-red-500/30", padding: "p-4" },
