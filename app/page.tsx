@@ -21,7 +21,7 @@ const sponsors = [
   { name: "Saily", logo: "/saily.png", url: "https://saily.com/site/", bgColor: "bg-gradient-to-br from-yellow-300 to-orange-400", padding: "p-8" },
   { name: "AoPS", logo: "/AoPS.png", url: "https://artofproblemsolving.com/company", bgColor: "#F0F4F8", padding: "p-8" },
   { name: "XYZ", logo: "/XYZ.png", url: "https://gen.xyz/", bgColor: "#6A0DAD", padding: "p-8" },
-  { name: "laa", logo: "", url: "https://gen.xyz/", bgColor: "#6A0DAD", padding: "p-8" },
+  { name: "laa", logo: "LAA.png", url: "https://www.leadingaces.com/", bgColor: "bg-gradient-to-br from-purple-600 to-indigo-700", padding: "p-8" },
   { name: "Cleanshot", logo: "/CleanShot.png", url: "https://cleanshot.com/", bgColor: "bg-gradient-to-br from-blue-500 to-purple-600", padding: "p-4" },
   { name: "Balsamiq", logo: "/balsamiq.png", url: "https://balsamiq.com/", bgColor: "bg-gradient-to-br from-red-500 to-pink-500", padding: "p-4" },
   { name: "BlockChain North", logo: "/blockchain.png", url: "https://blockchainnorth.ca/", bgColor: "bg-gradient-to-tr from-blue-500/60 to-red-500/75", padding: "p-4" },
