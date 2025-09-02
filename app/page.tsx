@@ -13,16 +13,24 @@ const navItems = ['About', 'Sponsors', 'Team', 'FAQ', 'Schedule'];
 
 // Sponsor data
 const sponsors = [
-  { name: "Certopus", logo: "/certopus.png", url: "https://certopus.com", bgColor: "#FFFFFF" },
-  { name: "NordProtect", logo: "/Logo-3.png", url: "https://nordprotect.com/", bgColor: "bg-gradient-to-tr from-yellow-400/30 to-red-500/30" },
-  { name: "NordPass", logo: "/nordpass.png", url: "https://nordpass.com", bgColor: "#4668D6" },
-  { name: "Interview Cake", logo: "/InterviewCake.png", url: "https://www.interviewcake.com", bgColor: "#5AB8D8" },
-  { name: "NordVPN", logo: "/NordVPN.png", url: "https://nordvpn.com", bgColor: "bg-gradient-to-tr from-purple-500/50 to-pink-500/50" },
-  { name: "Saily", logo: "/saily.png", url: "https://saily.com/site/", bgColor: "#FFD166" },
-  { name: "AoPS", logo: "/AoPS.png", url: "https://artofproblemsolving.com/company", bgColor: "#F0F4F8" },
-  { name: "XYZ", logo: "/XYZ.png", url: "https://gen.xyz/", bgColor: "#6A0DAD" },
+  { name: "Certopus", logo: "/certopus.png", url: "https://certopus.com", bgColor: "#FFFFFF", padding: "p-0" },
+  { name: "NordProtect", logo: "/Logo-3.png", url: "https://nordprotect.com/", bgColor: "bg-gradient-to-tr from-yellow-400/30 to-red-500/30", padding: "p-4" },
+  { name: "NordPass", logo: "/nordpass.png", url: "https://nordpass.com", bgColor: "bg-gradient-to-br from-blue-500 to-indigo-600", padding: "p-4" },
+  { name: "Interview Cake", logo: "/InterviewCake.png", url: "https://www.interviewcake.com", bgColor: "bg-gradient-to-br from-sky-400 to-cyan-500", padding: "p-4" },
+  { name: "NordVPN", logo: "/NordVPN.png", url: "https://nordvpn.com", bgColor: "bg-gradient-to-tr from-purple-500/50 to-pink-500/50", padding: "p-2" },
+  { name: "Saily", logo: "/saily.png", url: "https://saily.com/site/", bgColor: "bg-gradient-to-br from-yellow-300 to-orange-400", padding: "p-8" },
+  { name: "AoPS", logo: "/AoPS.png", url: "https://artofproblemsolving.com/company", bgColor: "#F0F4F8", padding: "p-8" },
+  { name: "XYZ", logo: "/XYZ.png", url: "https://gen.xyz/", bgColor: "#6A0DAD", padding: "p-8" },
+  { name: "laa", logo: "", url: "https://gen.xyz/", bgColor: "#6A0DAD", padding: "p-8" },
+  { name: "Cleanshot", logo: "/CleanShot.png", url: "https://cleanshot.com/", bgColor: "bg-gradient-to-br from-blue-500 to-purple-600", padding: "p-4" },
+  { name: "Balsamiq", logo: "/balsamiq.png", url: "https://balsamiq.com/", bgColor: "bg-gradient-to-br from-red-500 to-pink-500", padding: "p-4" },
+  { name: "BlockChain North", logo: "/blockchain.png", url: "https://blockchainnorth.ca/", bgColor: "bg-gradient-to-tr from-blue-500/60 to-red-500/75", padding: "p-4" },
+  { name: "COCALC", logo: "/COCALC.png", url: "https://cocalc.com/", bgColor: "bg-gradient-to-br from-orange-400 to-yellow-500", padding: "p-8" },
+  { name: "Interview Buddy", logo: "/interview.png", url: "https://interviewbuddy.net/", bgColor: "bg-gradient-to-br from-purple-600 to-indigo-700", padding: "p-6" },
+  { name: "FlatLogic", logo: "/flatlogic.png", url: "https://flatlogic.com/", bgColor: "bg-gradient-to-br from-blue-600 to-purple-700", padding: "p-4" },
+  { name: "ClassZoo", logo: "/classzoo.png", url: "https://classzoo.app/", bgColor: "bg-gradient-to-br from-green-500 to-teal-600", padding: "p-4" },
+  { name: "nexos.ai", logo: "/nexos.png", url: "https://nexos.ai/", bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600", padding: "p-6" },
 ];
-
 
 function DropdownItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -246,18 +254,14 @@ export default function Home() {
                 }`}
                 style={{ backgroundColor: sponsor.bgColor.startsWith('#') ? sponsor.bgColor : undefined }}
               >
-                <div className={`absolute inset-0 flex items-center justify-center ${
-                  ['Certopus', 'NordVPN'].includes(sponsor.name)
-                    ? 'p-2'
-                    : ['NordPass', 'Interview Cake', 'NordProtect'].includes(sponsor.name) 
-                      ? 'p-4' 
-                      : 'p-8'
-                }`}>
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className="object-contain max-w-full max-h-full pointer-events-none"
-                  />
+                <div className={`absolute inset-0 flex items-center justify-center ${sponsor.padding}`}>
+                  {sponsor.logo && (
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="object-contain max-w-full max-h-full pointer-events-none"
+                    />
+                  )}
                 </div>
               </a>
             </div>
