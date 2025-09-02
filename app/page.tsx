@@ -30,6 +30,8 @@ const sponsors = [
   { name: "FlatLogic", logo: "/flatlogic.png", url: "https://flatlogic.com/", bgColor: "bg-gradient-to-br from-blue-600 to-purple-700", padding: "p-4" },
   { name: "ClassZoo", logo: "/classzoo.png", url: "https://classzoo.app/", bgColor: "bg-gradient-to-br from-green-500 to-teal-600", padding: "p-4" },
   { name: "nexos.ai", logo: "/nexos.png", url: "https://nexos.ai/", bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600", padding: "p-6" },
+  { name: "Jukebox", logo: "/jukebox.png", url: "https://www.jukeboxprint.com/", bgColor: "bg-gradient-to-br from-pink-500 to-fuchsia-600", padding: "p-4" },
+
 ];
 
 function DropdownItem({ question, answer }: { question: string; answer: string }) {
@@ -244,12 +246,16 @@ export default function Home() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-14 justify-items-center">
           {sponsors.map((sponsor) => (
-            <div key={sponsor.name} className="flex flex-col items-center group cursor-pointer">
+            <div key={sponsor.name} className={`group cursor-pointer ${
+              sponsor.name === "Jukebox" 
+                ? "col-span-2 flex items-center justify-center gap-8" 
+                : "flex flex-col items-center"
+            }`}>
               <a
                 href={sponsor.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block w-[15.5rem] h-[15.5rem] rounded-full shadow-2xl transform transition-transform group-hover:scale-110 relative overflow-hidden ${
+                className={`block w-[15.5rem] h-[15.5rem] rounded-full shadow-2xl transform transition-transform group-hover:scale-110 relative overflow-hidden flex-shrink-0 ${
                   sponsor.bgColor.startsWith('bg-gradient') ? sponsor.bgColor : ''
                 }`}
                 style={{ backgroundColor: sponsor.bgColor.startsWith('#') ? sponsor.bgColor : undefined }}
@@ -264,6 +270,32 @@ export default function Home() {
                   )}
                 </div>
               </a>
+              {sponsor.name === "Jukebox" && (
+                <div className="relative">
+                  <div className="absolute -top-2 -left-2 w-full h-full bg-gradient-to-r from-pink-500/30 to-purple-500/30 rounded-2xl animate-pulse"></div>
+                  <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-2xl border-2 border-pink-500/50 shadow-xl max-w-sm">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="bg-pink-400 rounded-full animate-pulse"></div>
+                      <div className="text-pink-400 font-bold text-lg">BIG SHOUTOUT!</div>
+                    </div>
+                    <p className="text-white font-semibold mb-2 text-sm">
+                      To Jukebox for our {" "}
+                      <a 
+                        href="https://www.jukeboxprint.com/custom-stickers"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 hover:from-pink-300 hover:to-purple-300 underline decoration-2 decoration-pink-400/50 hover:decoration-pink-300/70 transition-all duration-300 font-bold"
+                      >
+                        custom stickers
+                      </a>{" "}
+                      at RhythmHacks!
+                    </p>
+                    <div className="text-gray-400 text-xs italic">
+                      Code in style.
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
