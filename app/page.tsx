@@ -72,7 +72,7 @@ export default function Home() {
   const dropdownItems = [
     {
       question: "What is a hackathon?",
-      answer: "RythmHacks is an exciting hackathon where technology meets creativity. Participants build innovative projects while experiencing the rhythm of coding."
+      answer: "RythmHacks is an exciting hackathon where technology meets creativity. Participants build innovative projects while experiencing the rythm of coding."
     },
     {
       question: "Do I need a team?",
@@ -237,7 +237,7 @@ export default function Home() {
           Our Sponsors
         </h2>
         <p className="mb-12 max-w-2xl mx-auto text-2xl text-gray-300 leading-relaxed">
-          We are incredibly grateful to our amazing sponsors who make RhythmHacks 2025 into a reality! 
+          We are incredibly grateful to our amazing sponsors who make RythmHacks 2025 into a reality! 
           Your support empowers the next generation of innovators and creators. 
           <span className="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-pink-200 to-blue-400 font-bold">
             Thank you for believing in our community! 
@@ -288,7 +288,7 @@ export default function Home() {
                       >
                         custom stickers
                       </a>{" "}
-                      at RhythmHacks!
+                      at RythmHacks!
                     </p>
                     <div className="text-gray-400 text-xs italic">
                       Code in style.
