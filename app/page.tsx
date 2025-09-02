@@ -87,7 +87,7 @@ export default function Home() {
       answer: "Of course! Thanks to the generous support of our sponsors, we are able to provide breakfast, lunch, and dinner along with some snacks to keep you fueled up during the hack!"
     },
     {
-      question: "What if I can't code?",
+      question: "What if I can’t code?",
       answer: "Don't worry! RythmHacks welcomes everyone and gives hackers the chance to showcase their unique skills! You will find workshops, mentors, and a welcoming community ready to help.  RythmHacks is the perfect place to learn, grow, and bring your ideas to life!"
     },
     {
