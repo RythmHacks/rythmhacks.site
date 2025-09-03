@@ -13,16 +13,26 @@ const navItems = ['About', 'Sponsors', 'Team', 'FAQ', 'Schedule'];
 
 // Sponsor data
 const sponsors = [
-  { name: "Certopus", logo: "/certopus.png", url: "https://certopus.com", bgColor: "#FFFFFF" },
-  { name: "NordProtect", logo: "/Logo-3.png", url: "https://nordprotect.com/", bgColor: "bg-gradient-to-tr from-yellow-400/30 to-red-500/30" },
-  { name: "NordPass", logo: "/nordpass.png", url: "https://nordpass.com", bgColor: "#4668D6" },
-  { name: "Interview Cake", logo: "/InterviewCake.png", url: "https://www.interviewcake.com", bgColor: "#5AB8D8" },
-  { name: "NordVPN", logo: "/NordVPN.png", url: "https://nordvpn.com", bgColor: "bg-gradient-to-tr from-purple-500/50 to-pink-500/50" },
-  { name: "Saily", logo: "/saily.png", url: "https://saily.com/site/", bgColor: "#FFD166" },
-  { name: "AoPS", logo: "/AoPS.png", url: "https://artofproblemsolving.com/company", bgColor: "#F0F4F8" },
-  { name: "XYZ", logo: "/XYZ.png", url: "https://gen.xyz/", bgColor: "#6A0DAD" },
-];
+  { name: "Certopus", logo: "/certopus.png", url: "https://certopus.com", bgColor: "#FFFFFF", padding: "p-0" },
+  { name: "NordProtect", logo: "/Logo-3.png", url: "https://nordprotect.com/", bgColor: "bg-gradient-to-tr from-yellow-400/30 to-red-500/30", padding: "p-4" },
+  { name: "NordPass", logo: "/nordpass.png", url: "https://nordpass.com", bgColor: "bg-gradient-to-br from-blue-500 to-indigo-600", padding: "p-4" },
+  { name: "Interview Cake", logo: "/InterviewCake.png", url: "https://www.interviewcake.com", bgColor: "bg-gradient-to-br from-sky-400 to-cyan-500", padding: "p-4" },
+  { name: "NordVPN", logo: "/NordVPN.png", url: "https://nordvpn.com", bgColor: "bg-gradient-to-tr from-purple-500/50 to-pink-500/50", padding: "p-2" },
+  { name: "Saily", logo: "/saily.png", url: "https://saily.com/site/", bgColor: "bg-gradient-to-br from-yellow-300 to-orange-400", padding: "p-8" },
+  { name: "AoPS", logo: "/AoPS.png", url: "https://artofproblemsolving.com/company", bgColor: "#F0F4F8", padding: "p-8" },
+  { name: "XYZ", logo: "/XYZ.png", url: "https://gen.xyz/", bgColor: "#6A0DAD", padding: "p-8" },
+  { name: "laa", logo: "LAA.png", url: "https://www.leadingaces.com/", bgColor: "bg-gradient-to-br from-purple-600 to-indigo-700", padding: "p-8" },
+  { name: "Cleanshot", logo: "/CleanShot.png", url: "https://cleanshot.com/", bgColor: "bg-gradient-to-br from-blue-500 to-purple-600", padding: "p-4" },
+  { name: "Balsamiq", logo: "/balsamiq.png", url: "https://balsamiq.com/", bgColor: "bg-gradient-to-br from-red-500 to-pink-500", padding: "p-4" },
+  { name: "BlockChain North", logo: "/blockchain.png", url: "https://blockchainnorth.ca/", bgColor: "bg-gradient-to-tr from-blue-500/60 to-red-500/75", padding: "p-4" },
+  { name: "COCALC", logo: "/COCALC.png", url: "https://cocalc.com/", bgColor: "bg-gradient-to-br from-orange-400 to-yellow-500", padding: "p-8" },
+  { name: "Interview Buddy", logo: "/interview.png", url: "https://interviewbuddy.net/", bgColor: "bg-gradient-to-br from-purple-600 to-indigo-700", padding: "p-6" },
+  { name: "FlatLogic", logo: "/flatlogic.png", url: "https://flatlogic.com/", bgColor: "bg-gradient-to-br from-blue-600 to-purple-700", padding: "p-4" },
+  { name: "ClassZoo", logo: "/classzoo.png", url: "https://classzoo.app/", bgColor: "bg-gradient-to-br from-green-500 to-teal-600", padding: "p-4" },
+  { name: "nexos.ai", logo: "/nexos.png", url: "https://nexos.ai/", bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600", padding: "p-6" },
+  { name: "Jukebox", logo: "/jukebox.png", url: "https://www.jukeboxprint.com/", bgColor: "bg-gradient-to-br from-pink-500 to-fuchsia-600", padding: "p-4" },
 
+];
 
 function DropdownItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,7 +72,7 @@ export default function Home() {
   const dropdownItems = [
     {
       question: "What is a hackathon?",
-      answer: "RythmHacks is an exciting hackathon where technology meets creativity. Participants build innovative projects while experiencing the rhythm of coding."
+      answer: "RythmHacks is an exciting hackathon where technology meets creativity. Participants build innovative projects while experiencing the rythm of coding."
     },
     {
       question: "Do I need a team?",
@@ -227,7 +237,7 @@ export default function Home() {
           Our Sponsors
         </h2>
         <p className="mb-12 max-w-2xl mx-auto text-2xl text-gray-300 leading-relaxed">
-          We are incredibly grateful to our amazing sponsors who make RhythmHacks 2025 into a reality! 
+          We are incredibly grateful to our amazing sponsors who make RythmHacks 2025 into a reality! 
           Your support empowers the next generation of innovators and creators. 
           <span className="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-pink-200 to-blue-400 font-bold">
             Thank you for believing in our community! 
@@ -236,30 +246,56 @@ export default function Home() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-14 justify-items-center">
           {sponsors.map((sponsor) => (
-            <div key={sponsor.name} className="flex flex-col items-center group cursor-pointer">
+            <div key={sponsor.name} className={`group cursor-pointer ${
+              sponsor.name === "Jukebox" 
+                ? "col-span-2 flex items-center justify-center gap-8" 
+                : "flex flex-col items-center"
+            }`}>
               <a
                 href={sponsor.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block w-[15.5rem] h-[15.5rem] rounded-full shadow-2xl transform transition-transform group-hover:scale-110 relative overflow-hidden ${
+                className={`block w-[15.5rem] h-[15.5rem] rounded-full shadow-2xl transform transition-transform group-hover:scale-110 relative overflow-hidden flex-shrink-0 ${
                   sponsor.bgColor.startsWith('bg-gradient') ? sponsor.bgColor : ''
                 }`}
                 style={{ backgroundColor: sponsor.bgColor.startsWith('#') ? sponsor.bgColor : undefined }}
               >
-                <div className={`absolute inset-0 flex items-center justify-center ${
-                  ['Certopus', 'NordVPN'].includes(sponsor.name)
-                    ? 'p-2'
-                    : ['NordPass', 'Interview Cake', 'NordProtect'].includes(sponsor.name) 
-                      ? 'p-4' 
-                      : 'p-8'
-                }`}>
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className="object-contain max-w-full max-h-full pointer-events-none"
-                  />
+                <div className={`absolute inset-0 flex items-center justify-center ${sponsor.padding}`}>
+                  {sponsor.logo && (
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="object-contain max-w-full max-h-full pointer-events-none"
+                    />
+                  )}
                 </div>
               </a>
+              {sponsor.name === "Jukebox" && (
+                <div className="relative">
+                  <div className="absolute -top-2 -left-2 w-full h-full bg-gradient-to-r from-pink-500/30 to-purple-500/30 rounded-2xl animate-pulse"></div>
+                  <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-2xl border-2 border-pink-500/50 shadow-xl max-w-sm">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="bg-pink-400 rounded-full animate-pulse"></div>
+                      <div className="text-pink-400 font-bold text-lg">BIG SHOUTOUT!</div>
+                    </div>
+                    <p className="text-white font-semibold mb-2 text-sm">
+                      To Jukebox for our {" "}
+                      <a 
+                        href="https://www.jukeboxprint.com/custom-stickers"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 hover:from-pink-300 hover:to-purple-300 underline decoration-2 decoration-pink-400/50 hover:decoration-pink-300/70 transition-all duration-300 font-bold"
+                      >
+                        custom stickers
+                      </a>{" "}
+                      at RythmHacks!
+                    </p>
+                    <div className="text-gray-400 text-xs italic">
+                      Code in style.
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
