@@ -4,12 +4,9 @@ import Image from "next/image";
 import AlgorithmVisual from "./AlgorithmVisual";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { IoMdClose } from "react-icons/io";
+import Navbar from "./Navbar";
 // ...existing code...
 
-// Navigation items
-const navItems = ['About', 'Sponsors', 'Team', 'FAQ', 'Schedule'];
 
 // Sponsor data
 const sponsors = [
@@ -67,7 +64,6 @@ function DropdownItem({ question, answer }: { question: string; answer: string }
 }
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false);
 
   const dropdownItems = [
     {
@@ -96,14 +92,6 @@ export default function Home() {
     }
   ];
 
-  const scrollToSection = (id:string) => {
-    const section = document.getElementById(id);
-    setIsOpen(false)
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
   const profileImg = (url:string, name:string) => {
     return (
       <div className="flex flex-col items-center">
@@ -115,7 +103,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center p-4 relative overflow-hidden">
-      
+      <div className="w-full mx-auto ">
+        <Navbar />
+      </div>
       {/* Algorithm pattern down the left side */}
       <div className="absolute left-0 top-0 h-full w-48 flex flex-col justify-start items-center opacity-60 pointer-events-none overflow-hidden">
         <div className="-mt-[800px]"><AlgorithmVisual /></div>
@@ -133,41 +123,6 @@ export default function Home() {
         height={200}
         className="absolute top-8 left-8 z-20 hidden lg:block"
       />
-
-      {/* Navigation */}
-      <header className="w-full flex justify-end mb-30 z-9999 ">
-        <nav className="space-x-2">
-          <div className="hidden md:flex">
-            {navItems.map((item) => (
-              <button
-                key={item}
-                className="bg-gradient-to-r from-pink-300 to-sky-600 text-white px-8 py-4 mx-2 rounded-lg font-semibold text-[20px] hover:drop-shadow-[0_0_5px_rgba(255,255,255)] hover:ring-1 linear duration-200"
-                onClick={() => {scrollToSection(item)}}
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-          {/* Mobile Menu */}
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <IoMdClose size={36} color="white"/> : <GiHamburgerMenu size={36} color="white"/>}
-            </button>
-          </div>
-
-          {isOpen && (
-            <div className="absolute top-8 right-20 z-[9999] flex flex-col items-center md:hidden gap-4 bg-black/50 p-8">
-              {navItems.map((item) => (
-                <button
-                key={item}
-                className=" z-[9999] w-full bg-gradient-to-r from-pink-300 to-sky-600 text-white px-8 py-4 mx-2 rounded-lg font-semibold text-[20px] hover:drop-shadow-[0_0_5px_rgba(255,255,255)] hover:ring-1 linear duration-200"
-                onClick={() => {scrollToSection(item)}}
-              > {item} </button>
-              ))}
-            </div>
-          )}
-        </nav>
-      </header>
 
       {/* Hero Section */}
       <main className="flex-grow flex flex-col items-center justify-center z-10">
@@ -244,7 +199,7 @@ export default function Home() {
           </span>
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-14 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-14 justify-items-center mx-5 ">
           {sponsors.map((sponsor) => (
             <div key={sponsor.name} className={`group cursor-pointer ${
               sponsor.name === "Jukebox" 
