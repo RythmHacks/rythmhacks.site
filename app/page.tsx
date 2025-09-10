@@ -25,12 +25,15 @@ const sponsors = [
   { name: "BlockChain North", logo: "/blockchain.png", url: "https://blockchainnorth.ca/", bgColor: "bg-gradient-to-tr from-blue-500/60 to-red-500/75", padding: "p-4" },
   { name: "COCALC", logo: "/COCALC.png", url: "https://cocalc.com/", bgColor: "bg-gradient-to-br from-orange-400 to-yellow-500", padding: "p-8" },
   { name: "Interview Buddy", logo: "/interview.png", url: "https://interviewbuddy.net/", bgColor: "bg-gradient-to-br from-purple-600 to-indigo-700", padding: "p-6" },
-  { name: "FlatLogic", logo: "/flatlogic.png", url: "https://flatlogic.com/", bgColor: "bg-gradient-to-br from-blue-600 to-purple-700", padding: "p-4" },
-  { name: "ClassZoo", logo: "/classzoo.png", url: "https://classzoo.app/", bgColor: "bg-gradient-to-br from-green-500 to-teal-600", padding: "p-4" },
+  { name: "FlatLogic", logo: "/flatlogic.png", url: "https://flatlogic.com/", bgColor: "bg-gradient-to-br from-blue-600 to-purple-700", padding: "p-0" },
+  { name: "ClassZoo", logo: "/classzoo.png", url: "https://classzoo.app/", bgColor: "bg-gradient-to-br from-green-500 to-teal-600", padding: "p-0" },
   { name: "nexos.ai", logo: "/nexos.png", url: "https://nexos.ai/", bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600", padding: "p-6" },
+  { name: "codecrafters", logo: "/codecrafter.png", url: "https://codecrafters.io/", bgColor: "bg-gradient-to-br from-purple-700 to-blue-500", padding: "p-0" },
+  { name: "UWaterloo", logo: "/UWaterloo.png", url: "https://uwaterloo.ca/", bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600", padding: "p-6" },
   { name: "Jukebox", logo: "/jukebox.png", url: "https://www.jukeboxprint.com/", bgColor: "bg-gradient-to-br from-pink-500 to-fuchsia-600", padding: "p-4" },
 
 ];
+
 
 function DropdownItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -207,25 +210,6 @@ export default function Home() {
                 ? "col-span-2 flex items-center justify-center gap-8" 
                 : "flex flex-col items-center"
             }`}>
-              <a
-                href={sponsor.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`block w-[15.5rem] h-[15.5rem] rounded-full shadow-2xl transform transition-transform group-hover:scale-110 relative overflow-hidden flex-shrink-0 ${
-                  sponsor.bgColor.startsWith('bg-gradient') ? sponsor.bgColor : ''
-                }`}
-                style={{ backgroundColor: sponsor.bgColor.startsWith('#') ? sponsor.bgColor : undefined }}
-              >
-                <div className={`absolute inset-0 flex items-center justify-center ${sponsor.padding}`}>
-                  {sponsor.logo && (
-                    <img
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      className="object-contain max-w-full max-h-full pointer-events-none"
-                    />
-                  )}
-                </div>
-              </a>
               {sponsor.name === "Jukebox" && (
                 <div className="relative">
                   <div className="absolute -top-2 -left-2 w-full h-full bg-gradient-to-r from-pink-500/30 to-purple-500/30 rounded-2xl animate-pulse"></div>
@@ -252,6 +236,25 @@ export default function Home() {
                   </div>
                 </div>
               )}
+              <a
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`block w-[15.5rem] h-[15.5rem] rounded-full shadow-2xl transform transition-transform group-hover:scale-110 relative overflow-hidden flex-shrink-0 ${
+                  sponsor.bgColor.startsWith('bg-gradient') ? sponsor.bgColor : ''
+                }`}
+                style={{ backgroundColor: sponsor.bgColor.startsWith('#') ? sponsor.bgColor : undefined }}
+              >
+                <div className={`absolute inset-0 flex items-center justify-center ${sponsor.padding}`}>
+                  {sponsor.logo && (
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="object-contain max-w-full max-h-full pointer-events-none"
+                    />
+                  )}
+                </div>
+              </a>
             </div>
           ))}
         </div>
