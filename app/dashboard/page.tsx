@@ -11,7 +11,7 @@ export default function Dashboard() {
     const timer = setInterval(() => {
       const now = new Date();
       const eventDate = new Date('2025-12-31T23:59:59');
-      const diff = eventDate - now;
+      const diff = eventDate.getTime() - now.getTime();
       
       if (diff > 0) {
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
