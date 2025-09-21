@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import AlgorithmVisual from "./AlgorithmVisual";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
@@ -140,7 +141,7 @@ export default function Home() {
         <h2 className="text-5xl font-semibold mt-16 mb-30">Coming soon...</h2>
 
         <button className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-8 py-4 rounded-full text-2xl font-semibold hover:drop-shadow-[0_0_5px_rgba(255,255,255)] hover:ring-1 linear duration-200">
-          APPLY NOW!
+          <Link href="/auth/login">APPLY NOW!</Link>
         </button>
       </main>
 

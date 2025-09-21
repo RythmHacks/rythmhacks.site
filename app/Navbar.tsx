@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import { useRouter, usePathname } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 
@@ -7,13 +8,21 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const navItems = ['About', 'Sponsors', 'Team', 'FAQ', 'Schedule'];
 
+    const router = useRouter();
+    const pathname = usePathname();
+
     const scrollToSection = (id:string) => {
-        const section = document.getElementById(id);
-        setIsOpen(false)
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
-        }
+      setIsOpen(false);
+
+      if (pathname !== "/") {
+        // Not on homepage → navigate to homepage with hash
+        router.push("/");
+      } 
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
       }
+    }
       
   return (
     <div>
