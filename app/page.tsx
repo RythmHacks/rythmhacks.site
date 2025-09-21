@@ -30,8 +30,9 @@ const sponsors = [
   { name: "nexos.ai", logo: "/nexos.png", url: "https://nexos.ai/", bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600", padding: "p-6" },
   { name: "codecrafters", logo: "/codecrafter.png", url: "https://codecrafters.io/", bgColor: "bg-gradient-to-br from-purple-700 to-blue-500", padding: "p-0" },
   { name: "UWaterloo", logo: "/UWaterloo.png", url: "https://uwaterloo.ca/", bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600", padding: "p-6" },
+  { name: "Kernels", logo: "/Kernels.png", url: "https://www.kernelspopcorn.com/", bgColor: "bg-gradient-to-br from-sky-50 to-blue-300", padding: "p-0" },
+  { name: "Wolfram", logo: "/Wolfram.png", url: "https://www.wolfram.com/company/", bgColor: "bg-gradient-to-br from-orange-100 to-red-400", padding: "p-6" },
   { name: "Jukebox", logo: "/jukebox.png", url: "https://www.jukeboxprint.com/", bgColor: "bg-gradient-to-br from-pink-500 to-fuchsia-600", padding: "p-4" },
-
 ];
 
 
