@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react"
+import React, {useState, useEffect} from "react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import toast, { Toaster } from "react-hot-toast"
@@ -8,6 +8,9 @@ import axios from "axios";
 
 export default function Dashboard() {
     const router = useRouter();
+    const [userData, setUserData] = useState(
+        {firstName: "", lastName: "", email: ""}
+    );
     const logout = async () => {
         try {
             await axios.get('/api/auth/logout');
@@ -18,6 +21,18 @@ export default function Dashboard() {
         }
     }
 
+    const getUserDetails = async () => {
+        try {
+            const res = await axios.get('/api/dashboard');
+            setUserData(res.data.user);
+        } catch (error) {
+            console.log("Error fetching user details");
+        }
+    }
+
+    useEffect(() => {
+        getUserDetails();
+      }, []);
 
     return (
         <div className="min-h-screen bg-black text-white flex flex-col items-center p-4 mt-30">
@@ -41,7 +56,7 @@ export default function Dashboard() {
                 <h1 className="text-8xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-sky-600 ">
                 RythmHacks
                 </h1>
-                <p className="mt-2 text-gray-400 text-3xl ">Welcome, {}</p>
+                <p className="mt-2 text-gray-400 text-3xl ">Welcome {userData.firstName}</p> 
 
                 <h3 className="text-6xl font-bold m-20 text-white drop-shadow-[0_0_20px_rgb(255,255,255)]" > HACKER DASHBOARD </h3>
             </div>

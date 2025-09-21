@@ -3,7 +3,7 @@
 import { connect } from "@/config/db"
 import { NextResponse } from "next/server"
 
-export async function GET (r) {
+export async function GET () {
     try {
         await connect()
 
