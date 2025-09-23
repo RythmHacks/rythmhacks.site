@@ -27,7 +27,7 @@ export default function Login() {
     }
 
     return (
-        <div className="min-h-screen overflow-auto scrollbar-hide bg-gradient-b-p-p">
+        <div className="min-h-screen overflow-auto scrollbar-hide bg-gradient-b-p-p p-4">
             {/* Headphones */}
             <Toaster/>
             <Image
@@ -41,18 +41,20 @@ export default function Login() {
 
             <div className="flex flex-col items-center justify-center my-25 w-full">
                 <h1 className="text-6xl text-white font-bold">Login</h1>
-                <form className="items-center justify-center mt-10 space-y-4 w-1/2 lg:w-2/5" onSubmit={onLogin}>
+                <form className="relative items-center justify-center mt-10 space-y-4 w-1/2 lg:w-2/5" onSubmit={onLogin}>
 
                     <input value={user.email} onChange={(e) => setUser({...user, email:e.target.value})}
                         className=" w-full p-3 pb-0 h-16 border-2 border-white rounded-2xl bg-[rgba(255,255,255,0.2)] text-gray-300" placeholder="Email"></input>
-            
+                    <label className="absolute top-1 left-3.5 text-white font-semibold text-sm" >Email</label>
+
                     <input type="password" value={user.password} onChange={(e) => setUser({...user, password:e.target.value})}
                         className="w-full p-3 pb-0 mb-4 h-16 border-2 border-white rounded-2xl bg-[rgba(255,255,255,0.2)] text-gray-300" placeholder="Password"></input>                   
+                    <label className="absolute top-21 left-3.5 text-white font-semibold text-sm" >Password</label>
 
-                    <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 ">Login</button>
+                    <button type="submit" className="bg-blue-500  text-white font-bold px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Login</button>
                 </form>
 
-                <Link className="text-2xl text-white" href="/auth/signup">Create an account? Sign Up</Link>
+                <Link className="text-xl text-white p-5" href="/auth/signup">Create an account? <span className="text-blue-500">Sign Up</span></Link>
 
             </div>
     

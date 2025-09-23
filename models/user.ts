@@ -11,7 +11,8 @@ const userSchema = new mongoose.Schema({
     resetPasswordToken: { type: String },
     resetPasswordExpires: { type: Date },
     
-    role: { type: String, enum: ['pending', 'hacker', 'rejected'], default: 'pending' },
+    role: { type: String, enum: ['pending', 'hacker', 'rejected'], default: 'incomplete' },
+
 }, { timestamps: true });
 
 const User = mongoose.models.User || mongoose.model("User", userSchema);

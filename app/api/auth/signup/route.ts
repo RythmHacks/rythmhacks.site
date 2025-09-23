@@ -26,8 +26,7 @@ export async function POST (request: NextRequest) {
         console.log("New user object:", newUser);
         await newUser.save()
         console.log("User created")
-        
-
+    
         return NextResponse.json({message:"User created successfully"}, {status:200})
 
 

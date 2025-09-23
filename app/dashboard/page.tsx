@@ -1,6 +1,7 @@
 "use client";
 
 import React, {useState, useEffect} from "react"
+import Form from "./Form"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import toast, { Toaster } from "react-hot-toast"
@@ -37,6 +38,7 @@ export default function Dashboard() {
     return (
         <div className="min-h-screen bg-black text-white flex flex-col items-center p-4 mt-30">
             {/* Headphones */}
+            <Toaster />
             <Image
             src="/headphones.png"
             alt="RythmHacks Headphones"
@@ -60,7 +62,7 @@ export default function Dashboard() {
 
                 <h3 className="text-6xl font-bold m-20 text-white drop-shadow-[0_0_20px_rgb(255,255,255)]" > HACKER DASHBOARD </h3>
             </div>
-    
+                <Form/>
             </main>
         </div>
         )
