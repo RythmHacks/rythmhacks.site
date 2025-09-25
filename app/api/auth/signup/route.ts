@@ -24,6 +24,7 @@ export async function POST (request: NextRequest) {
             password: hashedPassword
         })
         console.log("New user object:", newUser);
+        
         await newUser.save()
         console.log("User created")
     

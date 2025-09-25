@@ -5,14 +5,9 @@ const userSchema = new mongoose.Schema({
     lastName: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    isVerified: { type: Boolean, default: false },
-    verificationToken: { type: String },
-    verificationExpires: { type: Date },
-    resetPasswordToken: { type: String },
-    resetPasswordExpires: { type: Date },
-    
-    role: { type: String, enum: ['pending', 'hacker', 'rejected'], default: 'incomplete' },
 
+    role: { type: String, enum: ['pending', 'hacker', 'rejected','incomplete'], default: 'incomplete' },
+    
 }, { timestamps: true });
 
 const User = mongoose.models.User || mongoose.model("User", userSchema);

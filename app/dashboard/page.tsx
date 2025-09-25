@@ -10,7 +10,7 @@ import axios from "axios";
 export default function Dashboard() {
     const router = useRouter();
     const [userData, setUserData] = useState(
-        {firstName: "", lastName: "", email: ""}
+        {firstName: "", lastName: "", email: "", role: ""}
     );
     const logout = async () => {
         try {
@@ -54,16 +54,19 @@ export default function Dashboard() {
     
             {/* Hero Section */}
             <main className="flex flex-col items-center justify-center z-10">
-            <div className="text-center mb-20">
+            <div className="text-center mb-5">
                 <h1 className="text-8xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-sky-600 ">
                 RythmHacks
                 </h1>
-                <p className="mt-2 text-gray-400 text-3xl ">Welcome {userData.firstName}</p> 
+                <p className="mt-2 text-gray-400 text-3xl ">Welcome {userData.firstName} {userData.lastName}</p> 
 
                 <h3 className="text-6xl font-bold m-20 text-white drop-shadow-[0_0_20px_rgb(255,255,255)]" > HACKER DASHBOARD </h3>
             </div>
-                <Form/>
             </main>
+            <div className="w-4/5 flex flex-col items-center justify-center">
+                
+                <Form email={userData.email} role={userData.role}/>
+            </div>
         </div>
         )
 
