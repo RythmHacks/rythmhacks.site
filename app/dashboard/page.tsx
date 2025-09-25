@@ -64,8 +64,7 @@ export default function Dashboard() {
             </div>
             </main>
             <div className="w-4/5 flex flex-col items-center justify-center">
-                
-                <Form email={userData.email} role={userData.role}/>
+                <Form email = {userData.email}/>
             </div>
         </div>
         )

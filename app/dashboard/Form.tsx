@@ -4,8 +4,10 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios';
 import { toast, Toaster } from 'react-hot-toast';
 
-const Form = ({email, role}: {email:string, role:string}) => {
-    const [submitted, setSubmitted] = useState(role=="incomplete" ? true : false);
+const Form = (() => {
+    const [submitted, setSubmitted] = useState(false);
+    const [email, setEmail] = useState("")
+    const [role, setRole] = useState("")
     const [formData, setFormData] = useState({
         email:email,
         firstName: "",
@@ -31,6 +33,7 @@ const Form = ({email, role}: {email:string, role:string}) => {
         setSubmitted(true);
 
         try {
+          console.log("email:", email, formData)
           const res = await axios.post("/api/dashboard/formSubmission", formData)
           toast.success("Submitted Successfully", res.data)
         } catch (error) {
@@ -48,30 +51,27 @@ const Form = ({email, role}: {email:string, role:string}) => {
         } catch (error) {
         }
     }
-    /*
     const getRole = async () => {
-      const res = await axios.get("/api/dashboard/formSubmission", { params: { email: email }})
-      return res
+      const res = await axios.get("/api/dashboard/formSubmission")
+      setEmail(res.data.user.email)
+      setRole(res.data.user.role)
     }
 
     useEffect(() => {
-      const role = getRole()
-      console.log("Role:", role)
-      setSubmitted(role.toString()=="incomplete" ? false : true)
+      getRole()
     },[])
-*/
+    useEffect(() => {
+      console.log(role)
+      setFormData({...formData, email})
+      if (role=="incomplete") setSubmitted(false)
+      else setSubmitted(true)
+    }, [role])
+
   return (
     
     <div className='w-full justify-center mx-10'>
         <Toaster />
-        {submitted ? 
-        <div>
-            <h1 className='text-4xl font-semibold mb-5'>Application Submitted!</h1>
-            <p className='text-lg mb-5'>Thank you for applying to RythmHacks! </p>
-            <p>To edit your application:</p>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2"
-            onClick={editProfile}>Click Here</button>
-        </div> :
+        {!submitted ? 
         <form className="flex flex-col w-full" onSubmit={handleSubmit}>
 
           <label className='text-left text-2xl font-semibold mb-2'>Basic Information</label>
@@ -117,9 +117,16 @@ const Form = ({email, role}: {email:string, role:string}) => {
             className="w-full bg-white text-black my-2 p-2" placeholder="Portfolio Website"></input>
 
             <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2">Submit</button>
-        </form>}
+        </form> : 
+        <div>
+          <h1 className='text-4xl font-semibold mb-5'>Application Submitted!</h1>
+          <p className='text-lg mb-5'>Thank you for applying to RythmHacks! </p>
+          <p>To edit your application:</p>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2"
+          onClick={editProfile}>Click Here</button>
+        </div> }
     </div>
   )
-}
+})
 
 export default Form
