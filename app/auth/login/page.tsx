@@ -54,6 +54,12 @@ export default function Login() {
                     <button type="submit" className="bg-blue-500  text-white font-bold px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Login</button>
                 </form>
 
+                <div className="text-center mt-4">
+                    <Link className="text-blue-400 hover:text-blue-300 underline" href="/forgot-password">
+                        Forgot Password?
+                    </Link>
+                </div>
+
                 <Link className="text-xl text-white p-5" href="/auth/signup">Create an account? <span className="text-blue-500">Sign Up</span></Link>
 
             </div>
