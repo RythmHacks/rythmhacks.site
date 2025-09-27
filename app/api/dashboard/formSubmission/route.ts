@@ -28,14 +28,23 @@ export async function POST(request: NextRequest) {
       LinkedIn,
       portfolioWebsite,
     } = reqBody;
-    const user = await User.findOne({ email }).select("_id");
-    const id = user?._id;
-    console.log("User ID:", id, "email", email);
-    const updatedUser = await User.findByIdAndUpdate(id, { role: "pending" });
-    console.log(updatedUser);
+    
+    // Get user ID from token instead of email lookup
+    const userId = await getData(request);
+    console.log("User ID from token:", userId, "email from form:", email);
+    
+    if (!userId) {
+      return NextResponse.json(
+        { error: "Authentication required" },
+        { status: 401 }
+      );
+    }
+    
+    const updatedUser = await User.findByIdAndUpdate(userId, { role: "pending" });
+    console.log("Updated user:", updatedUser);
 
     const newApplication = new Application({
-      user: id,
+      user: userId,
       firstName,
       lastName,
       phone,
@@ -58,7 +67,8 @@ export async function POST(request: NextRequest) {
       { message: "Form submitted successfully" },
       { status: 200 }
     );
-  } catch {
+  } catch (error: unknown) {
+    console.error("POST error:", error);
     return NextResponse.json(
       { error: "Error submitting form" },
       { status: 500 }
@@ -70,11 +80,19 @@ export async function PATCH(request: NextRequest) {
   try {
     await connect();
     console.log("rawr ");
-    const reqBody = await request.json();
-    const { email } = reqBody;
-    const user = await User.findOne({ email: email });
-    const userId = user?.id;
-    await User.findByIdAndUpdate({ ...user, role: "incomplete" });
+    
+    // Get user ID from token instead of email lookup
+    const userId = await getData(request);
+    console.log("User ID from token:", userId);
+    
+    if (!userId) {
+      return NextResponse.json(
+        { error: "Authentication required" },
+        { status: 401 }
+      );
+    }
+    
+    await User.findByIdAndUpdate(userId, { role: "incomplete" });
 
     const app = await Application.findOne({ user: userId });
     await Application.findByIdAndDelete(app?._id);
@@ -84,7 +102,8 @@ export async function PATCH(request: NextRequest) {
       { message: "Form deleted successfully", data: app },
       { status: 200 }
     );
-  } catch {
+  } catch (error: unknown) {
+    console.error("PATCH error:", error);
     return NextResponse.json({ error: "Error deleting form" }, { status: 500 });
   }
 }

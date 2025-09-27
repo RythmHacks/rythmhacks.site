@@ -110,9 +110,7 @@ const Form = (props: FormProps) => {
   };
   const editProfile = async () => {
     try {
-      const res = await axios.patch("/api/dashboard/formSubmission", {
-        email: email,
-      });
+      const res = await axios.patch("/api/dashboard/formSubmission");
       toast.success("You can now edit your application!");
       console.log("hjhjhkjj", res.data.data);
       setFormData(res.data.data);
