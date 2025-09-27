@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
         await connect()
 
         const reqBody = await request.json();
-        const { email, firstName, lastName, phone, school, graduationYear, dietRestrictions, tshirtSize, hackathonsAttended, hearAboutUs, Q1, Q2, Q3, Github, LinkedIn, portfolioWebsite, resume } = reqBody;
+        const { email, firstName, lastName, phone, school, graduationYear, dietRestrictions, hackathonsAttended, hearAboutUs, Q1, Q2, Q3, Github, LinkedIn, portfolioWebsite, resume } = reqBody;
         const user = await User.findOne({ email }).select("_id")
         const id = user?._id;
         console.log("User ID:", id, "email", email);
@@ -27,7 +27,6 @@ export async function POST(request: NextRequest) {
             school,
             graduationYear,
             dietRestrictions,
-            tshirtSize,
             hackathonsAttended,
             hearAboutUs,
             Q1,

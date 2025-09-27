@@ -32,7 +32,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <button
                 key={item}
-                className="bg-gradient-to-r from-pink-300 to-sky-600 text-white px-8 py-4 mx-2 rounded-lg font-semibold text-[20px] hover:drop-shadow-[0_0_5px_rgba(255,255,255)] hover:ring-1 linear duration-200"
+                className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 hover:border-blue-500 text-white px-6 py-3 mx-1 rounded-xl font-medium text-lg hover:bg-gray-700/70 transition-all duration-300 hover:scale-105"
                 onClick={() => {scrollToSection(item)}}
               >
                 {item}
@@ -41,17 +41,20 @@ const Navbar = () => {
           </div>
           {/* Mobile Menu */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <IoMdClose size={36} color="white"/> : <GiHamburgerMenu size={36} color="white"/>}
+            <button 
+              onClick={() => setIsOpen(!isOpen)}
+              className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 p-2 rounded-xl hover:bg-gray-700/70 transition-all duration-300"
+            >
+              {isOpen ? <IoMdClose size={28} color="white"/> : <GiHamburgerMenu size={28} color="white"/>}
             </button>
           </div>
 
           {isOpen && (
-            <div className="absolute top-8 right-20 z-[9999] flex flex-col items-center md:hidden gap-4 bg-black/50 p-8">
+            <div className="absolute top-16 right-4 z-[9999] flex flex-col items-center md:hidden gap-3 bg-gray-900/95 backdrop-blur-md p-6 rounded-2xl border border-gray-700 shadow-2xl">
               {navItems.map((item) => (
                 <button
                 key={item}
-                className=" z-[9999] w-full bg-gradient-to-r from-pink-300 to-sky-600 text-white px-8 py-4 mx-2 rounded-lg font-semibold text-[20px] hover:drop-shadow-[0_0_5px_rgba(255,255,255)] hover:ring-1 linear duration-200"
+                className="z-[9999] w-full bg-gray-800/80 hover:bg-gray-700/80 text-white px-6 py-3 rounded-xl font-medium text-lg border border-gray-600 hover:border-blue-500 transition-all duration-300"
                 onClick={() => {scrollToSection(item)}}
               > {item} </button>
               ))}

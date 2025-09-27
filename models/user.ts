@@ -8,6 +8,10 @@ const userSchema = new mongoose.Schema({
 
     role: { type: String, enum: ['pending', 'hacker', 'rejected','incomplete'], default: 'incomplete' },
     
+    // Password reset fields
+    resetToken: { type: String },
+    resetTokenExpiry: { type: Date },
+    
 }, { timestamps: true });
 
 const User = mongoose.models.User || mongoose.model("User", userSchema);
