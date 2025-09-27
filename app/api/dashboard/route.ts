@@ -4,16 +4,16 @@ import User from "@/models/user";
 import { connect } from "@/config/db";
 
 export async function GET(req: NextRequest) {
-    try {
-        await connect()
+  try {
+    await connect();
 
-        const userId = await getData(req);
-        const user = await User.findById(userId).select("-password");
-        
-        return NextResponse.json({ user }, { status: 200 });
+    const userId = await getData(req);
+    const user = await User.findById(userId).select("-password");
 
-    } catch (error: any) {
-        return NextResponse.json({ message: error.message }, { status: 500 });
-    }
+    return NextResponse.json({ user }, { status: 200 });
+  } catch (error: unknown) {
+    const errorMessage =
+      error instanceof Error ? error.message : "Error fetching user data";
+    return NextResponse.json({ message: errorMessage }, { status: 500 });
+  }
 }
-

@@ -8,36 +8,178 @@ import { ChevronDown } from "lucide-react";
 import Navbar from "./Navbar";
 // ...existing code...
 
-
 // Sponsor data
 const sponsors = [
-  { name: "Certopus", logo: "/certopus.png", url: "https://certopus.com", bgColor: "#FFFFFF", padding: "p-0" },
-  { name: "NordProtect", logo: "/Logo-3.png", url: "https://nordprotect.com/", bgColor: "bg-gradient-to-tr from-yellow-400/30 to-red-500/30", padding: "p-4" },
-  { name: "NordPass", logo: "/nordpass.png", url: "https://nordpass.com/", bgColor: "bg-gradient-to-br from-blue-500 to-indigo-600", padding: "p-4" },
-  { name: "Interview Cake", logo: "/InterviewCake.png", url: "https://www.interviewcake.com", bgColor: "bg-gradient-to-br from-sky-400 to-cyan-500", padding: "p-4" },
-  { name: "Incogni", logo: "/incogni.png", url: "https://incogni.com/", bgColor: "#FFFFFF", padding: "p-4" },
-  { name: "NordVPN", logo: "/NordVPN.png", url: "https://nordvpn.com/hackathons/", bgColor: "bg-gradient-to-tr from-purple-500/50 to-pink-500/50", padding: "p-2" },
-  { name: "Saily", logo: "/saily.png", url: "https://saily.com/", bgColor: "bg-gradient-to-br from-yellow-300 to-orange-400", padding: "p-8" },
-  { name: "AoPS", logo: "/AoPS.png", url: "https://artofproblemsolving.com/company", bgColor: "#F0F4F8", padding: "p-8" },
-  { name: "XYZ", logo: "/XYZ.png", url: "https://gen.xyz/", bgColor: "#6A0DAD", padding: "p-8" },
-  { name: "laa", logo: "LAA.png", url: "https://www.leadingaces.com/", bgColor: "bg-gradient-to-br from-purple-600 to-indigo-700", padding: "p-8" },
-  { name: "Cleanshot", logo: "/CleanShot.png", url: "https://cleanshot.com/", bgColor: "bg-gradient-to-br from-blue-500 to-purple-600", padding: "p-4" },
-  { name: "Balsamiq", logo: "/balsamiq.png", url: "https://balsamiq.com/", bgColor: "bg-gradient-to-br from-red-500 to-pink-500", padding: "p-4" },
-  { name: "BlockChain North", logo: "/blockchain.png", url: "https://blockchainnorth.ca/", bgColor: "bg-gradient-to-tr from-blue-500/60 to-red-500/75", padding: "p-4" },
-  { name: "COCALC", logo: "/COCALC.png", url: "https://cocalc.com/", bgColor: "bg-gradient-to-br from-orange-400 to-yellow-500", padding: "p-8" },
-  { name: "Interview Buddy", logo: "/interview.png", url: "https://interviewbuddy.net/", bgColor: "bg-gradient-to-br from-purple-600 to-indigo-700", padding: "p-6" },
-  { name: "FlatLogic", logo: "/flatlogic.png", url: "https://flatlogic.com/", bgColor: "bg-gradient-to-br from-blue-600 to-purple-700", padding: "p-0" },
-  { name: "ClassZoo", logo: "/classzoo.png", url: "https://classzoo.app/", bgColor: "bg-gradient-to-br from-green-500 to-teal-600", padding: "p-0" },
-  { name: "nexos.ai", logo: "/nexos.png", url: "https://nexos.ai/", bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600", padding: "p-6" },
-  { name: "codecrafters", logo: "/codecrafter.png", url: "https://codecrafters.io/", bgColor: "bg-gradient-to-br from-purple-700 to-blue-500", padding: "p-0" },
-  { name: "UWaterloo", logo: "/UWaterloo.png", url: "https://uwaterloo.ca/", bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600", padding: "p-6" },
-  { name: "Kernels", logo: "/Kernels.png", url: "https://www.kernelspopcorn.com/", bgColor: "bg-gradient-to-br from-sky-50 to-blue-300", padding: "p-0" },
-  { name: "Wolfram", logo: "/Wolfram.png", url: "https://www.wolfram.com/company/", bgColor: "bg-gradient-to-br from-orange-100 to-red-400", padding: "p-6" },
-  { name: "Jukebox", logo: "/jukebox.png", url: "https://www.jukeboxprint.com/", bgColor: "bg-gradient-to-br from-pink-500 to-fuchsia-600", padding: "p-4" },
+  {
+    name: "Certopus",
+    logo: "/certopus.png",
+    url: "https://certopus.com",
+    bgColor: "#FFFFFF",
+    padding: "p-0",
+  },
+  {
+    name: "NordProtect",
+    logo: "/Logo-3.png",
+    url: "https://nordprotect.com/",
+    bgColor: "bg-gradient-to-tr from-yellow-400/30 to-red-500/30",
+    padding: "p-4",
+  },
+  {
+    name: "NordPass",
+    logo: "/nordpass.png",
+    url: "https://nordpass.com/",
+    bgColor: "bg-gradient-to-br from-blue-500 to-indigo-600",
+    padding: "p-4",
+  },
+  {
+    name: "Interview Cake",
+    logo: "/InterviewCake.png",
+    url: "https://www.interviewcake.com",
+    bgColor: "bg-gradient-to-br from-sky-400 to-cyan-500",
+    padding: "p-4",
+  },
+  {
+    name: "Incogni",
+    logo: "/incogni.png",
+    url: "https://incogni.com/",
+    bgColor: "#FFFFFF",
+    padding: "p-4",
+  },
+  {
+    name: "NordVPN",
+    logo: "/NordVPN.png",
+    url: "https://nordvpn.com/hackathons/",
+    bgColor: "bg-gradient-to-tr from-purple-500/50 to-pink-500/50",
+    padding: "p-2",
+  },
+  {
+    name: "Saily",
+    logo: "/saily.png",
+    url: "https://saily.com/",
+    bgColor: "bg-gradient-to-br from-yellow-300 to-orange-400",
+    padding: "p-8",
+  },
+  {
+    name: "AoPS",
+    logo: "/AoPS.png",
+    url: "https://artofproblemsolving.com/company",
+    bgColor: "#F0F4F8",
+    padding: "p-8",
+  },
+  {
+    name: "XYZ",
+    logo: "/XYZ.png",
+    url: "https://gen.xyz/",
+    bgColor: "#6A0DAD",
+    padding: "p-8",
+  },
+  {
+    name: "laa",
+    logo: "LAA.png",
+    url: "https://www.leadingaces.com/",
+    bgColor: "bg-gradient-to-br from-purple-600 to-indigo-700",
+    padding: "p-8",
+  },
+  {
+    name: "Cleanshot",
+    logo: "/CleanShot.png",
+    url: "https://cleanshot.com/",
+    bgColor: "bg-gradient-to-br from-blue-500 to-purple-600",
+    padding: "p-4",
+  },
+  {
+    name: "Balsamiq",
+    logo: "/balsamiq.png",
+    url: "https://balsamiq.com/",
+    bgColor: "bg-gradient-to-br from-red-500 to-pink-500",
+    padding: "p-4",
+  },
+  {
+    name: "BlockChain North",
+    logo: "/blockchain.png",
+    url: "https://blockchainnorth.ca/",
+    bgColor: "bg-gradient-to-tr from-blue-500/60 to-red-500/75",
+    padding: "p-4",
+  },
+  {
+    name: "COCALC",
+    logo: "/COCALC.png",
+    url: "https://cocalc.com/",
+    bgColor: "bg-gradient-to-br from-orange-400 to-yellow-500",
+    padding: "p-8",
+  },
+  {
+    name: "Interview Buddy",
+    logo: "/interview.png",
+    url: "https://interviewbuddy.net/",
+    bgColor: "bg-gradient-to-br from-purple-600 to-indigo-700",
+    padding: "p-6",
+  },
+  {
+    name: "FlatLogic",
+    logo: "/flatlogic.png",
+    url: "https://flatlogic.com/",
+    bgColor: "bg-gradient-to-br from-blue-600 to-purple-700",
+    padding: "p-0",
+  },
+  {
+    name: "ClassZoo",
+    logo: "/classzoo.png",
+    url: "https://classzoo.app/",
+    bgColor: "bg-gradient-to-br from-green-500 to-teal-600",
+    padding: "p-0",
+  },
+  {
+    name: "nexos.ai",
+    logo: "/nexos.png",
+    url: "https://nexos.ai/",
+    bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600",
+    padding: "p-6",
+  },
+  {
+    name: "codecrafters",
+    logo: "/codecrafter.png",
+    url: "https://codecrafters.io/",
+    bgColor: "bg-gradient-to-br from-purple-700 to-blue-500",
+    padding: "p-0",
+  },
+  {
+    name: "UWaterloo",
+    logo: "/UWaterloo.png",
+    url: "https://uwaterloo.ca/",
+    bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600",
+    padding: "p-6",
+  },
+  {
+    name: "Kernels",
+    logo: "/Kernels.png",
+    url: "https://www.kernelspopcorn.com/",
+    bgColor: "bg-gradient-to-br from-sky-50 to-blue-300",
+    padding: "p-0",
+  },
+  {
+    name: "Wolfram",
+    logo: "/Wolfram.png",
+    url: "https://www.wolfram.com/company/",
+    bgColor: "bg-gradient-to-br from-orange-100 to-red-400",
+    padding: "p-6",
+  },
+  {
+    name: "Jukebox",
+    logo: "/jukebox.png",
+    url: "https://www.jukeboxprint.com/",
+    bgColor: "bg-gradient-to-br from-pink-500 to-fuchsia-600",
+    padding: "p-4",
+  },
 ];
 
-
-function DropdownItem({ question, answer }: { question: string; answer: string }) {
+function DropdownItem({
+  question,
+  answer,
+}: {
+  question: string;
+  answer: string;
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -49,18 +191,20 @@ function DropdownItem({ question, answer }: { question: string; answer: string }
       >
         <div className="flex items-center justify-between">
           <span className="text-lg font-semibold pr-4">{question}</span>
-          <ChevronDown 
+          <ChevronDown
             className={`w-6 h-6 transition-transform duration-300 flex-shrink-0 text-blue-400 ${
-              isOpen ? 'rotate-180' : 'rotate-0'
+              isOpen ? "rotate-180" : "rotate-0"
             }`}
           />
         </div>
       </button>
 
       {/* Dropdown content with animation */}
-      <div className={`overflow-hidden transition-all duration-300 ${
-        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-      }`}>
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
         <div className="mt-4 p-6 rounded-2xl bg-gray-900 text-gray-300 shadow-inner border border-gray-700">
           <p className="leading-relaxed">{answer}</p>
         </div>
@@ -70,42 +214,51 @@ function DropdownItem({ question, answer }: { question: string; answer: string }
 }
 
 export default function Home() {
-
   const dropdownItems = [
     {
       question: "What is a hackathon?",
-      answer: "RythmHacks is an exciting hackathon where technology meets creativity. Participants build innovative projects while experiencing the rythm of coding."
+      answer:
+        "RythmHacks is an exciting hackathon where technology meets creativity. Participants build innovative projects while experiencing the rythm of coding.",
     },
     {
       question: "Do I need a team?",
-      answer: "You can totally go solo! If you prefer to work by yourself, you can totally work by yourself. If you'd also like a team, RythmHacks is open to helping you find one!"
+      answer:
+        "You can totally go solo! If you prefer to work by yourself, you can totally work by yourself. If you'd also like a team, RythmHacks is open to helping you find one!",
     },
     {
       question: "Who can attend?",
-      answer: "All skill levels are welcome! Whether you're a beginner or an experienced developer, there's a place for you at RythmHacks."
+      answer:
+        "All skill levels are welcome! Whether you're a beginner or an experienced developer, there's a place for you at RythmHacks.",
     },
     {
       question: "Will food be provided?",
-      answer: "Of course! Thanks to the generous support of our sponsors, we are able to provide breakfast, lunch, and dinner along with some snacks to keep you fueled up during the hack!"
+      answer:
+        "Of course! Thanks to the generous support of our sponsors, we are able to provide breakfast, lunch, and dinner along with some snacks to keep you fueled up during the hack!",
     },
     {
       question: "What if I can’t code?",
-      answer: "Don't worry! RythmHacks welcomes everyone and gives hackers the chance to showcase their unique skills! You will find workshops, mentors, and a welcoming community ready to help.  RythmHacks is the perfect place to learn, grow, and bring your ideas to life!"
+      answer:
+        "Don't worry! RythmHacks welcomes everyone and gives hackers the chance to showcase their unique skills! You will find workshops, mentors, and a welcoming community ready to help.  RythmHacks is the perfect place to learn, grow, and bring your ideas to life!",
     },
     {
       question: "Can I stay overnight?",
-      answer: "Absolutely! You're welcome to stay overnight for the duration of the hack! Just don't forget to bring your necessities if you plan to get a good night's sleep!"
-    }
+      answer:
+        "Absolutely! You're welcome to stay overnight for the duration of the hack! Just don't forget to bring your necessities if you plan to get a good night's sleep!",
+    },
   ];
 
-  const profileImg = (url:string, name:string) => {
+  const profileImg = (url: string, name: string) => {
     return (
       <div className="flex flex-col items-center">
-        <img src={url}alt={name} className="w-48 h-48 rounded-full object-cover border-2 border-white "/>
+        <img
+          src={url}
+          alt={name}
+          className="w-48 h-48 rounded-full object-cover border-2 border-white "
+        />
         <p className="mt-2 text-2xl pt-serif-regular text-gray-300">{name}</p>
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center p-4 relative overflow-hidden">
@@ -114,7 +267,9 @@ export default function Home() {
       </div>
       {/* Algorithm pattern down the left side */}
       <div className="absolute left-0 top-0 h-full w-48 flex flex-col justify-start items-center opacity-60 pointer-events-none overflow-hidden">
-        <div className="-mt-[800px]"><AlgorithmVisual /></div>
+        <div className="-mt-[800px]">
+          <AlgorithmVisual />
+        </div>
       </div>
 
       {/* Background blobs */}
@@ -136,20 +291,39 @@ export default function Home() {
           <h1 className="text-8xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-sky-600 ">
             RythmHacks
           </h1>
-          <p className="mt-2 text-gray-400 text-3xl ">Experience the magic of tech</p>
+          <p className="mt-2 text-gray-400 text-3xl ">
+            Experience the magic of tech
+          </p>
         </div>
 
-        <h2 className="text-5xl font-semibold mt-10 drop-shadow-[0_0_20px_rgb(168,209,255)]">Applications Open Now!</h2>
-        <h2 className="text-xl text-gray-400 mt-2">October 25-26, 2025 • In-person event</h2>
-        <h2 className="text-xl text-gray-400 mb-25">Accelerator Centre, Waterloo</h2>
+        {/* Applications Section */}
+        <div className="text-center space-y-6 mb-12">
+          <h2 className="text-6xl font-bold drop-shadow-[0_0_20px_rgb(168,209,255)]">
+            Applications Open Now!
+          </h2>
 
-        <button className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-8 py-4 rounded-full text-2xl font-semibold hover:drop-shadow-[0_0_5px_rgba(255,255,255)] hover:ring-1 linear duration-200">
-          <Link href="/auth/login">APPLY NOW!</Link>
-        </button>
+          <div className="space-y-3 max-w-2xl mx-auto">
+            <h3 className="text-2xl text-gray-300 font-medium">
+              October 25-26, 2025 • In-person event
+            </h3>
+            <h3 className="text-xl text-gray-400">
+              Accelerator Centre, Waterloo
+            </h3>
+          </div>
+        </div>
+
+        <div className="flex justify-center mb-16">
+          <button className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-12 py-5 rounded-full text-2xl font-bold hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] hover:ring-2 hover:ring-white/20 hover:scale-105 transition-all duration-300 shadow-xl">
+            <Link href="/auth/login">APPLY NOW!</Link>
+          </button>
+        </div>
       </main>
 
       {/* About Section */}
-      <section id="About" className="w-full max-w-6xl mx-auto px-8 py-16 z-10 mt-40">
+      <section
+        id="About"
+        className="w-full max-w-6xl mx-auto px-8 py-16 z-10 mt-40"
+      >
         <div className="flex items-start gap-8 mb-12">
           <div className="flex items-center gap-4">
             <h2 className="text-7xl font-bold">About</h2>
@@ -159,10 +333,13 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <p className="text-xl font-semibold text-white leading-relaxed">
-              RythmHacks is back for 2025! Join us for 24 hours of the classic hackathon experience: Building projects attending awesome workshops, and sleep-deprived madness.
+              RythmHacks is back for 2025! Join us for 24 hours of the classic
+              hackathon experience: Building projects attending awesome
+              workshops, and sleep-deprived madness.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed mb-4">
-              With hundreds of dollars in prizes, sponsors of all kinds, and a workshop for everyone,{" "}
+              With hundreds of dollars in prizes, sponsors of all kinds, and a
+              workshop for everyone,{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-400 font-semibold">
                 RythmHacks
               </span>{" "}
@@ -173,8 +350,8 @@ export default function Home() {
           <div className="space-y-6">
             <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg p-1">
               <div className="bg-black rounded-lg p-4">
-                <img 
-                  src="/about-team-1.jpg" 
+                <img
+                  src="/about-team-1.jpg"
                   alt="RythmHacks participants holding awards"
                   className="w-full h-64 object-cover rounded-lg"
                 />
@@ -183,8 +360,8 @@ export default function Home() {
 
             <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg p-1">
               <div className="bg-black rounded-lg p-4">
-                <img 
-                  src="/about-team-2.jpg" 
+                <img
+                  src="/about-team-2.jpg"
                   alt="Participants collaborating at RythmHacks"
                   className="w-full h-64 object-cover rounded-lg"
                 />
@@ -200,31 +377,37 @@ export default function Home() {
           Our Sponsors
         </h2>
         <p className="mb-12 max-w-2xl mx-auto text-2xl text-gray-300 leading-relaxed">
-          We are incredibly grateful to our amazing sponsors who make RythmHacks 2025 into a reality! 
-          Your support empowers the next generation of innovators and creators. 
+          We are incredibly grateful to our amazing sponsors who make RythmHacks
+          2025 into a reality! Your support empowers the next generation of
+          innovators and creators.
           <span className="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-pink-200 to-blue-400 font-bold">
-            Thank you for believing in our community! 
+            Thank you for believing in our community!
           </span>
         </p>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-14 justify-items-center mx-5 ">
           {sponsors.map((sponsor) => (
-            <div key={sponsor.name} className={`group cursor-pointer ${
-              sponsor.name === "Jukebox" 
-                ? "col-span-2 flex items-center justify-center gap-8" 
-                : "flex flex-col items-center"
-            }`}>
+            <div
+              key={sponsor.name}
+              className={`group cursor-pointer ${
+                sponsor.name === "Jukebox"
+                  ? "col-span-2 flex items-center justify-center gap-8"
+                  : "flex flex-col items-center"
+              }`}
+            >
               {sponsor.name === "Jukebox" && (
                 <div className="relative">
                   <div className="absolute -top-2 -left-2 w-full h-full bg-gradient-to-r from-pink-500/30 to-purple-500/30 rounded-2xl animate-pulse"></div>
                   <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-2xl border-2 border-pink-500/50 shadow-xl max-w-sm">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="bg-pink-400 rounded-full animate-pulse"></div>
-                      <div className="text-pink-400 font-bold text-lg">BIG SHOUTOUT!</div>
+                      <div className="text-pink-400 font-bold text-lg">
+                        BIG SHOUTOUT!
+                      </div>
                     </div>
                     <p className="text-white font-semibold mb-2 text-sm">
-                      To Jukebox for our {" "}
-                      <a 
+                      To Jukebox for our{" "}
+                      <a
                         href="https://www.jukeboxprint.com/custom-stickers"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -245,11 +428,19 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`block w-[15.5rem] h-[15.5rem] rounded-full shadow-2xl transform transition-transform group-hover:scale-110 relative overflow-hidden flex-shrink-0 ${
-                  sponsor.bgColor.startsWith('bg-gradient') ? sponsor.bgColor : ''
+                  sponsor.bgColor.startsWith("bg-gradient")
+                    ? sponsor.bgColor
+                    : ""
                 }`}
-                style={{ backgroundColor: sponsor.bgColor.startsWith('#') ? sponsor.bgColor : undefined }}
+                style={{
+                  backgroundColor: sponsor.bgColor.startsWith("#")
+                    ? sponsor.bgColor
+                    : undefined,
+                }}
               >
-                <div className={`absolute inset-0 flex items-center justify-center ${sponsor.padding}`}>
+                <div
+                  className={`absolute inset-0 flex items-center justify-center ${sponsor.padding}`}
+                >
                   {sponsor.logo && (
                     <img
                       src={sponsor.logo}
@@ -268,7 +459,12 @@ export default function Home() {
       <div id="Team" className=" py-5 px-12 pl-8 pb-10 w-full my-25">
         <div className="flex items-center">
           {/* Square */}
-          <svg width="35" height="35" viewBox="0 0 40 40" className="drop-shadow-[0_0_10px_rgba(147,51,234,0.8)]">
+          <svg
+            width="35"
+            height="35"
+            viewBox="0 0 40 40"
+            className="drop-shadow-[0_0_10px_rgba(147,51,234,0.8)]"
+          >
             <polygon
               points="6,6 34,6 34,34 6,34"
               fill="transparent"
@@ -276,23 +472,22 @@ export default function Home() {
               strokeWidth="4"
             />
           </svg>
-            <h1 className="pl-2 text-6xl font-bold text-white">Team</h1>
+          <h1 className="pl-2 text-6xl font-bold text-white">Team</h1>
         </div>
         <div className="justify-center w-full flex">
           <div className="flex flex-col columns-1 w-full items-center">
             <h3 className="mt-3 text-transparent text-4xl bg-clip-text bg-gradient-to-r from-fuchsia-400 to-pink-300 font-bold">
-                Co-Leads
+              Co-Leads
             </h3>
-            <div className="gap-6 w-full justify-center flex m-5 mb-15" >
+            <div className="gap-6 w-full justify-center flex m-5 mb-15">
               {profileImg("/Team_Photos/nabira.png", "Nabira Rashid")}
               {profileImg("/Team_Photos/irene.png", "Irene Wang")}
             </div>
 
-
             <h3 className="mt-3 text-transparent text-4xl bg-clip-text bg-gradient-to-r from-pink-300 to-rose-400 font-bold">
-                Tech Team
+              Tech Team
             </h3>
-            <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center" >
+            <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center">
               {profileImg("/Team_Photos/hargun.png", "Hargun Badhesha")}
               {profileImg("/Team_Photos/sharon.png", "Sharon Basovich")}
               {profileImg("/Team_Photos/jerry.png", "Jerry Liu")}
@@ -300,52 +495,54 @@ export default function Home() {
               {profileImg("/Team_Photos/micheal.png", "Micheal Zang")}
             </div>
 
-
             <h3 className="mt-3 text-transparent text-4xl bg-clip-text bg-gradient-to-r from-rose-500 to-purple-300 font-bold">
-                Marketing Team
+              Marketing Team
             </h3>
-            <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center" >
+            <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center">
               {profileImg("/Team_Photos/pramod.png", "Pramod Chavali")}
               {profileImg("/Team_Photos/nutana.png", "Nutana Simhadri")}
               {profileImg("/Team_Photos/amy.png", "Amy Peng")}
             </div>
 
             <h3 className="mt-3 text-transparent text-4xl bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 font-bold">
-                Sponsorships & Logistics Team
+              Sponsorships & Logistics Team
             </h3>
-            <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center" >
+            <div className="grid gap-6 w-full mt-5 mb-15 [grid-template-columns:repeat(auto-fit,minmax(12rem,auto))] justify-center">
               {profileImg("/Team_Photos/maithili.png", "Maithili Rastogi")}
               {profileImg("/Team_Photos/geeth.png", "Geeth Gudavalli")}
               {profileImg("/Team_Photos/james.png", "James Yang")}
               {profileImg("/Team_Photos/alan.png", "Alan Liu")}
               {profileImg("/Team_Photos/saanvi.png", "Saanvi Lal")}
             </div>
-
           </div>
         </div>
       </div>
-      
+
       {/* FAQ Section */}
       <div id="FAQ" className="self-start py-5 px-10 pb-10">
         <div className="flex items-center">
-          <svg width="43" height="39" className="drop-shadow-[0_0_10px_rgba(147,51,234,0.8)] rotate-15">
-            <polygon 
+          <svg
+            width="43"
+            height="39"
+            className="drop-shadow-[0_0_10px_rgba(147,51,234,0.8)] rotate-15"
+          >
+            <polygon
               points="15,2 2,26 28,26"
               fill="transparent"
               stroke="rgb(147 51 234)"
               strokeWidth="4"
             />
           </svg>
-            <h1 className="text-6xl font-bold text-white">FAQ</h1>
+          <h1 className="text-6xl font-bold text-white">FAQ</h1>
         </div>
       </div>
 
       <div className="max-w-3xl mx-auto p-6 grid grid-cols-2 gap-y-10 gap-x-20 pb-20">
         {dropdownItems.map((item, index) => (
-          <DropdownItem 
-            key={index} 
-            question={item.question} 
-            answer={item.answer} 
+          <DropdownItem
+            key={index}
+            question={item.question}
+            answer={item.answer}
           />
         ))}
       </div>
@@ -358,20 +555,30 @@ export default function Home() {
             <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-400 mb-6">
               Get in Touch
             </h3>
-            
+
             {/* Contact Information */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-8">
               {/* Email */}
               <div className="flex items-center gap-3 bg-gray-900/50 rounded-lg px-6 py-4 hover:bg-gray-800/50 transition-colors duration-300 border border-gray-800">
                 <div className="bg-blue-500 rounded-full p-2">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
                   </svg>
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Email us</p>
-                  <a 
-                    href="mailto:rythmhacks@gmail.com" 
+                  <a
+                    href="mailto:rythmhacks@gmail.com"
                     className="text-white hover:text-blue-400 transition-colors duration-300 font-semibold"
                   >
                     rythmhacks@gmail.com
@@ -382,14 +589,18 @@ export default function Home() {
               {/* Instagram */}
               <div className="flex items-center gap-3 bg-gray-900/50 rounded-lg px-6 py-4 hover:bg-gray-800/50 transition-colors duration-300 border border-gray-800">
                 <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-full p-2">
-                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Follow us</p>
-                  <a 
-                    href="https://www.instagram.com/rythm.hacks/" 
+                  <a
+                    href="https://www.instagram.com/rythm.hacks/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-pink-400 transition-colors duration-300 font-semibold"

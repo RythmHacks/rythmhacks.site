@@ -6,7 +6,6 @@ export function middleware(request: NextRequest) {
   const isPublicOnly = path === "/auth/login" || path === "/auth/signup";
   const isProtected = path === "/dashboard";
   const token = request.cookies.get("token")?.value || "";
-  console.log(token, "fdsfdsf")
 
   // If already logged in, block access to login/signup
   if (isPublicOnly && token) {
@@ -17,7 +16,6 @@ export function middleware(request: NextRequest) {
   if (isProtected && !token) {
     return NextResponse.redirect(new URL("/auth/login", request.url));
   }
-
 }
 
 export const config = {
