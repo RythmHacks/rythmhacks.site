@@ -139,7 +139,9 @@ export default function Home() {
           <p className="mt-2 text-gray-400 text-3xl ">Experience the magic of tech</p>
         </div>
 
-        <h2 className="text-5xl font-semibold mt-16 mb-30">Coming soon...</h2>
+        <h2 className="text-5xl font-semibold mt-10 drop-shadow-[0_0_20px_rgb(168,209,255)]">Applications Open Now!</h2>
+        <h2 className="text-xl text-gray-400 mt-2">October 25-26, 2025 • In-person event</h2>
+        <h2 className="text-xl text-gray-400 mb-25">Accelerator Centre, Waterloo</h2>
 
         <button className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-8 py-4 rounded-full text-2xl font-semibold hover:drop-shadow-[0_0_5px_rgba(255,255,255)] hover:ring-1 linear duration-200">
           <Link href="/auth/login">APPLY NOW!</Link>
