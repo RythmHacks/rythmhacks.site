@@ -55,6 +55,7 @@ export async function PATCH (request: NextRequest) {
         const { email } = reqBody;
         const user = await User.findOne({ email:email })
         const userId = user?.id
+        await User.findByIdAndUpdate({...user, role:"incomplete"})
         
         const app = await Application.findOne({ user: userId })
         await Application.findByIdAndDelete(app?._id)
