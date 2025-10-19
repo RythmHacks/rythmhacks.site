@@ -114,7 +114,7 @@ export async function GET(req: NextRequest) {
 
     const userId = await getData(req);
     const user = await User.findById(userId).select("-password");
-
+    console.log(user)
     return NextResponse.json({ user }, { status: 200 });
   } catch (error: unknown) {
     const errorMessage =

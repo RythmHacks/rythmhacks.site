@@ -9,9 +9,9 @@ interface FormProps {
 }
 
 const Form = (props: FormProps) => {
-  const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
+  const [id, setId] = useState("")
   const [formData, setFormData] = useState({
     email: "",
     firstName: "",
@@ -99,7 +99,6 @@ const Form = (props: FormProps) => {
 
     console.log("Form data submitted:", formData);
     console.log("Email:", email);
-    setSubmitted(true);
 
     try {
       await axios.post("/api/dashboard/formSubmission", formData);
@@ -107,6 +106,7 @@ const Form = (props: FormProps) => {
     } catch {
       toast.error("Error submitting application");
     }
+    window.location.reload()
   };
   const editProfile = async () => {
     try {
@@ -114,13 +114,20 @@ const Form = (props: FormProps) => {
       toast.success("You can now edit your application!");
       console.log("hjhjhkjj", res.data.data);
       setFormData(res.data.data);
-      setSubmitted(false);
+      window.location.reload();
     } catch {}
   };
   const getRole = async () => {
     const res = await axios.get("/api/dashboard/formSubmission");
     setEmail(res.data.user.email);
     setRole(res.data.user.role);
+    setId(res.data.user._id);
+  };
+
+  const handleAcceptedRSVP = async () => {
+    console.log(id)
+    await axios.post("/api/admin", { status:"confirmed", id:id});
+    window.location.reload()
   };
 
   useEffect(() => {
@@ -133,14 +140,12 @@ const Form = (props: FormProps) => {
       setFormData((prev) => ({ ...prev, email: props.email }));
       setEmail(props.email);
     }
-    if (role == "incomplete") setSubmitted(false);
-    else setSubmitted(true);
   }, [role, props.email]);
 
   return (
     <div className="w-full justify-center mx-10">
       <Toaster />
-      {!submitted ? (
+      {role=="incomplete" ? (
         <form className="flex flex-col w-full" onSubmit={handleSubmit}>
           <label className="text-left text-2xl font-semibold mb-2">
             Basic Information
@@ -321,7 +326,7 @@ const Form = (props: FormProps) => {
             Submit Application
           </button>
         </form>
-      ) : (
+      ) : role=="pending" ? (
         <div className="flex flex-col items-center justify-center min-h-96 bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl p-8 shadow-2xl border border-gray-700">
           {/* Success Icon */}
           <div className="mb-8">
@@ -407,7 +412,63 @@ const Form = (props: FormProps) => {
             </p>
           </div>
         </div>
-      )}
+      ): role=="hacker" ? 
+      <div className="flex flex-col col-1 justify-center">
+        <div className="flex justify-center bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 rounded-xl px-6 py-3 mt-[-30px] mb-2 backdrop-blur-sm">
+            <p className="text-blue-300 font-medium text-4xl p-3">
+              📋 Status:{" "}
+              <span className="font-bold text-white">Accepted</span>
+            </p>
+        </div>
+        <p className="text-xl text-gray-300 mb-15">Click on the following button to RSVP:</p>
+
+        <button
+          onClick={handleAcceptedRSVP}
+              className="bg-gradient-to-r from-pink-300 to-blue-400 font-bold text-white text-2xl p-4 rounded-2xl shadow-md 
+              hover:from-pink-400 hover:to-blue-500 hover:-translate-y-0.5 
+                        active:translate-y-0 transition-all duration-200 ease-in-out"
+            >
+          RSVP
+        </button>
+
+      </div> : role=="confirmed" ? 
+      <div>
+        <div className="text-center mb-8 flex justify-center flex-row items-center">
+            <h1 className="text-4xl font-bold text-white mb-4">
+            <div className="flex bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 rounded-xl px-6 py-3 mb-8 backdrop-blur-sm">
+              <div className="mb-8 mt-8 mr-8 flex">
+              <div className="relative">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg ring-4 ring-green-400/20">
+                  <svg
+                    className="w-12 h-12 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 20 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2.5"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                {/* Animated rings */}
+                <div className="absolute inset-0 w-24 h-24 rounded-full border-2 border-green-400/30 animate-ping"></div>
+              </div>
+            </div>
+            <div className="flex items-center">
+              <p className="text-blue-300 font-medium">
+                📋 Status:{" "}
+                <span className="font-bold text-white">Confirmed RSVP</span>
+              </p>
+            </div>
+          </div>
+            </h1>
+            <div className="max-w-md">
+            </div>
+          </div>
+      </div>:<div></div>}
     </div>
   );
 };

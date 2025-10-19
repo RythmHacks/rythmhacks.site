@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
 
     role: {
       type: String,
-      enum: ["pending", "hacker", "rejected", "incomplete"],
+      enum: ["pending", "hacker", "rejected", "incomplete", "confirmed"],
       default: "incomplete",
     },
 
