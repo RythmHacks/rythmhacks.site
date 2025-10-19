@@ -301,8 +301,8 @@ export default function Home() {
       </div>
 
       {/* Background blobs */}
-      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000 pointer-events-none"></div>
 
       {/* Headphones */}
       <Image
@@ -547,7 +547,7 @@ export default function Home() {
       </div>
 
       {/* FAQ Section */}
-      <div id="FAQ" className="self-start py-5 px-10 pb-10">
+      <div id="FAQ" className="self-start py-5 px-10 pb-10 scroll-mt-24">
         <div className="flex items-center">
           <svg
             width="43"
@@ -574,6 +574,53 @@ export default function Home() {
           />
         ))}
       </div>
+
+      {/* Schedule Section */}
+      <section
+        id="Schedule"
+        className="w-full px-10 py-16 z-10 mt-10 scroll-mt-24"
+      >
+        <h2 className="text-7xl font-bold mb-6">Schedule</h2>
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="rounded-2xl border border-gray-800 bg-gray-900/30 p-6">
+            <h3 className="text-2xl font-semibold">Saturday, October 25</h3>
+            <ul className="mt-4 space-y-3 text-gray-200">
+              <li>• 8:30am – Arrival & check-in</li>
+              <li>• 9:00am – Opening ceremonies</li>
+              <li>• 10:00am – Hacking begins</li>
+              <li>• 11:30am – CoCalc workshop</li>
+              <li>• 12:00pm – Lunch</li>
+              <li>• 12:00pm – 5:00pm – Virtual VC support available</li>
+              <li>• 1:00pm – Waterloo workshop</li>
+              <li>• 2:00pm – Microsoft Reactor session</li>
+              <li>• 3:00pm – ClassZoo workshop</li>
+              <li>• 4:30pm – Konfer workshop</li>
+              <li>• 5:00pm – Athena AI contest</li>
+              <li>• 6:00pm – Dinner</li>
+              <li>• 7:00pm – Geoguessr tournament</li>
+              <li>• 8:00pm – Websockets workshop</li>
+              <li>• 9:00pm – Karaoke</li>
+              <li>• 10:00pm – Snacks</li>
+              <li>• 11:00pm – Spicy Ramen Challenge</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl border border-gray-800 bg-gray-900/30 p-6 relative">
+            <h3 className="text-2xl font-semibold">Sunday, October 26</h3>
+            <ul className="mt-4 space-y-3 text-gray-200">
+              <li>• 7:30am – Breakfast</li>
+              <li>• 8:30am – Judging begins</li>
+              <li>• 10:30am – Judging ends</li>
+              <li>• 11:00am – Buffer time for judges + Freezie break</li>
+              <li>• 12:00pm – Closing ceremonies</li>
+              <li>• 1:00pm – Event concludes</li>
+            </ul>
+            <div className="absolute bottom-4 right-6 text-gray-400 text-sm italic">
+              Mentorship opportunities throughout the weekend!
+            </div>
+          </div>
+        </div>
+        
+      </section>
 
       {/* Contact Footer */}
       <footer className="w-full bg-black mt-20">
