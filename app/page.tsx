@@ -571,7 +571,7 @@ export default function Home() {
               <li>• 7:30am – Breakfast</li>
               <li>• 8:30am – Judging begins</li>
               <li>• 10:30am – Judging ends</li>
-              <li>• 11.00am – Freezie break</li>
+              <li>• 11.00am – Freezie break!</li>
               <li>• 12:00pm – Closing ceremonies</li>
               <li>• 1:00pm – Event concludes</li>
             </ul>
