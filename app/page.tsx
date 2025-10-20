@@ -588,7 +588,7 @@ export default function Home() {
                 ["10:00pm", "Snacks"],
                 ["11:00pm", "Spicy Ramen Challenge"],
               ].map(([time, event], idx) => (
-                <div key={idx} className="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800/70 rounded-lg p-4 border border-gray-700/50 transition-colors">
+                <div key={idx} className="flex items-center justify-between bg-gray-800/50 hover:bg-gray-700/70 hover:scale-[1.02] rounded-lg p-4 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-200">
                   <span className="text-gray-200 font-medium">{event}</span>
                   <span className="text-purple-400 font-semibold text-sm">{time}</span>
                 </div>
