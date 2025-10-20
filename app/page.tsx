@@ -594,7 +594,7 @@ export default function Home() {
               <li>• 1:00pm – Waterloo workshop</li>
               <li>• 2:00pm – Microsoft Reactor session</li>
               <li>• 3:00pm – ClassZoo workshop</li>
-              <li>• 4:30pm – Konfer workshop</li>
+              <li>• 4:00pm – Konfer workshop</li>
               <li>• 5:00pm – Athena AI contest</li>
               <li>• 6:00pm – Dinner</li>
               <li>• 7:00pm – Geoguessr tournament</li>
