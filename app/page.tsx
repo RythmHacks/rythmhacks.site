@@ -75,7 +75,7 @@ const sponsors = [
   },
   {
     name: "laa",
-    logo: "LAA.png",
+    logo: "/LAA.png",
     url: "https://www.leadingaces.com/",
     bgColor: "bg-gradient-to-br from-purple-600 to-indigo-700",
     padding: "p-8",
@@ -271,9 +271,11 @@ export default function Home() {
   const profileImg = (url: string, name: string) => {
     return (
       <div className="flex flex-col items-center">
-        <img
+        <Image
           src={url}
           alt={name}
+          width={192}
+          height={192}
           className="w-48 h-48 rounded-full object-cover border-2 border-white "
         />
         <p className="mt-2 text-2xl pt-serif-regular text-gray-300">{name}</p>
@@ -371,9 +373,11 @@ export default function Home() {
           <div className="space-y-6">
             <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg p-1">
               <div className="bg-black rounded-lg p-4">
-                <img
+                <Image
                   src="/about-team-1.jpg"
                   alt="RythmHacks participants holding awards"
+                  width={1200}
+                  height={800}
                   className="w-full h-64 object-cover rounded-lg"
                 />
               </div>
@@ -381,9 +385,11 @@ export default function Home() {
 
             <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg p-1">
               <div className="bg-black rounded-lg p-4">
-                <img
+                <Image
                   src="/about-team-2.jpg"
                   alt="Participants collaborating at RythmHacks"
+                  width={1200}
+                  height={800}
                   className="w-full h-64 object-cover rounded-lg"
                 />
               </div>
@@ -431,9 +437,11 @@ export default function Home() {
                   className={`absolute inset-0 flex items-center justify-center ${sponsor.padding}`}
                 >
                   {sponsor.logo && (
-                    <img
+                    <Image
                       src={sponsor.logo}
                       alt={sponsor.name}
+                      width={300}
+                      height={120}
                       className="object-contain max-w-full max-h-full pointer-events-none"
                     />
                   )}
@@ -541,40 +549,69 @@ export default function Home() {
         id="Schedule"
         className="w-full px-10 py-16 z-10 mt-10 scroll-mt-24"
       >
-        <h2 className="text-7xl font-bold mb-6">Schedule</h2>
+        <div className="flex items-center mb-6">
+          <svg
+            width="35"
+            height="35"
+            viewBox="0 0 40 40"
+            className="drop-shadow-[0_0_10px_rgba(147,51,234,0.8)]"
+          >
+            <polygon
+              points="6,6 34,6 34,34 6,34"
+              fill="transparent"
+              stroke="rgb(147 51 234)"
+              strokeWidth="4"
+            />
+          </svg>
+          <h2 className="pl-2 text-7xl font-bold">Schedule</h2>
+        </div>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="rounded-2xl border border-gray-800 bg-gray-900/30 p-6">
-            <h3 className="text-2xl font-semibold">Saturday, October 25</h3>
-            <ul className="mt-4 space-y-3 text-gray-200">
-              <li>• 8:30am – Arrival & check-in</li>
-              <li>• 9:00am – Opening ceremonies</li>
-              <li>• 10:00am – Hacking begins</li>
-              <li>• 11:00am – Waterloo workshop</li>
-              <li>• 12:00pm – Lunch</li>
-              <li>• 12:00pm - 5:00pm – Virtual VC support available</li>
-              <li>• 1:00pm – CoCalc workshop</li>
-              <li>• 2:00pm – Microsoft Reactor session</li>
-              <li>• 3:00pm – ClassZoo workshop</li>
-              <li>• 4:00pm – Konfer workshop</li>
-              <li>• 5:00pm – Athena AI contest</li>
-              <li>• 6:00pm – Dinner</li>
-              <li>• 7:00pm – Geoguessr tournament</li>
-              <li>• 8:00pm – Websockets workshop</li>
-              <li>• 9:00pm – Karaoke</li>
-              <li>• 10:00pm – Snacks</li>
-              <li>• 11:00pm – Spicy Ramen Challenge</li>
-            </ul>
+            <h3 className="text-2xl font-semibold mb-4">Saturday, October 25</h3>
+            <div className="space-y-3">
+              {[
+                ["8:30am", "Arrival & check-in"],
+                ["9:00am", "Opening ceremonies"],
+                ["10:00am", "Hacking begins"],
+                ["11:00am", "Waterloo workshop"],
+                ["12:00pm", "Lunch"],
+                ["12:00pm - 5:00pm", "Virtual VC support available"],
+                ["1:00pm", "CoCalc workshop"],
+                ["2:00pm", "Microsoft Reactor session"],
+                ["3:00pm", "ClassZoo workshop"],
+                ["4:00pm", "Konfer workshop"],
+                ["5:00pm", "Athena AI contest"],
+                ["6:00pm", "Dinner"],
+                ["7:00pm", "Geoguessr tournament"],
+                ["8:00pm", "Websockets workshop"],
+                ["9:00pm", "Karaoke"],
+                ["10:00pm", "Snacks"],
+                ["11:00pm", "Spicy Ramen Challenge"],
+              ].map(([time, event], idx) => (
+                <div key={idx} className="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800/70 rounded-lg p-4 border border-gray-700/50 transition-colors">
+                  <span className="text-gray-200 font-medium">{event}</span>
+                  <span className="text-purple-400 font-semibold text-sm">{time}</span>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="rounded-2xl border border-gray-800 bg-gray-900/30 p-6 relative">
-            <h3 className="text-2xl font-semibold">Sunday, October 26</h3>
-            <ul className="mt-4 space-y-3 text-gray-200">
-              <li>• 7:30am – Breakfast</li>
-              <li>• 8:30am – Judging begins</li>
-              <li>• 10:30am – Judging ends</li>
-              <li>• 11.00am – Freezie break</li>
-              <li>• 12:00pm – Closing ceremonies</li>
-              <li>• 1:00pm – Event concludes</li>
-            </ul>
+            <h3 className="text-2xl font-semibold mb-4">Sunday, October 26</h3>
+            <div className="space-y-3">
+              {[
+                ["7:30am", "Breakfast"],
+                ["8:30am", "Judging begins"],
+                ["10:30am", "Judging ends"],
+                ["11.00am", "Freezie break"],
+                ["12:00pm", "Closing ceremonies"],
+                ["1:00pm", "Event concludes"],
+              ].map(([time, event], idx) => (
+                <div key={idx} className="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800/70 rounded-lg p-4 border border-gray-700/50 transition-colors">
+                  <span className="text-gray-200 font-medium">{event}</span>
+                  <span className="text-purple-400 font-semibold text-sm">{time}</span>
+                </div>
+              ))}
+            </div>
             <div className="absolute bottom-4 right-6 text-gray-400 text-sm italic">
               Mentorship opportunities throughout the weekend!
             </div>
