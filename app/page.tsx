@@ -180,8 +180,8 @@ const sponsors = [
   },
   {
     name: "athena ai",
-    logo: "",
-    url: "",
+    logo: "https://athenachat.bot/assets/athena/logo.png",
+    url: "https://athenachat.bot",
     bgColor: "#FFFFFF",
     padding: "p-6",
   },
@@ -588,10 +588,10 @@ export default function Home() {
               <li>• 8:30am – Arrival & check-in</li>
               <li>• 9:00am – Opening ceremonies</li>
               <li>• 10:00am – Hacking begins</li>
-              <li>• 11:30am – CoCalc workshop</li>
+              <li>• 11:00am – Waterloo workshop</li>
               <li>• 12:00pm – Lunch</li>
               <li>• 12:00pm – 5:00pm – Virtual VC support available</li>
-              <li>• 1:00pm – Waterloo workshop</li>
+              <li>• 1:00pm – CoCalc workshop</li>
               <li>• 2:00pm – Microsoft Reactor session</li>
               <li>• 3:00pm – ClassZoo workshop</li>
               <li>• 4:00pm – Konfer workshop</li>
@@ -619,7 +619,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
       </section>
 
       {/* Contact Footer */}
