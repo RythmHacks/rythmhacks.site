@@ -541,59 +541,29 @@ export default function Home() {
         id="Schedule"
         className="w-full px-10 py-16 z-10 mt-10 scroll-mt-24"
       >
-        <div className="flex items-center mb-6">
-          <svg
-            width="35"
-            height="35"
-            viewBox="0 0 40 40"
-            className="drop-shadow-[0_0_10px_rgba(147,51,234,0.8)]"
-          >
-            <polygon
-              points="6,6 34,6 34,34 6,34"
-              fill="transparent"
-              stroke="rgb(147 51 234)"
-              strokeWidth="4"
-            />
-          </svg>
-          <h2 className="pl-2 text-7xl font-bold">Schedule</h2>
-        </div>
+        <h2 className="text-7xl font-bold mb-6">Schedule</h2>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="rounded-2xl border border-gray-800 bg-gray-900/30 p-6">
-            <h3 className="text-2xl font-semibold mb-4">Saturday, October 25</h3>
-            <div className="flex flex-col gap-4">
-              {[
-                ["8:30am", "Arrival & check-in"],
-                ["9:00am", "Opening ceremonies"],
-                ["10:00am", "Hacking begins"],
-                ["11:00am", "Waterloo workshop"],
-                ["12:00pm", "Lunch"],
-                ["12:00pm - 5:00pm", "Virtual VC support available"],
-                ["1:00pm", "CoCalc workshop"],
-                ["2:00pm", "Microsoft Reactor session"],
-                ["3:00pm", "ClassZoo workshop"],
-                ["4:00pm", "Konfer workshop"],
-                ["5:00pm", "Athena AI contest"],
-                ["6:00pm", "Dinner"],
-                ["7:00pm", "Geoguessr tournament"],
-                ["8:00pm", "Websockets workshop"],
-                ["9:00pm", "Karaoke"],
-                ["10:00pm", "Snacks"],
-                ["11:00pm", "Spicy Ramen Challenge"],
-              ].map(([time, label], idx) => (
-                <div key={idx} className="flex items-start gap-4">
-                  <div className="flex flex-col items-center">
-                    <div className="w-3 h-3 rounded-full bg-pink-500 mt-2"></div>
-                    {idx !== 16 && <div className="w-px h-full bg-gray-700 mt-1"></div>}
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between bg-gray-900 rounded-lg p-3 border border-gray-700">
-                      <div className="text-gray-300 font-semibold">{label}</div>
-                      <div className="text-sm text-gray-400">{time}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <h3 className="text-2xl font-semibold">Saturday, October 25</h3>
+            <ul className="mt-4 space-y-3 text-gray-200">
+              <li>• 8:30am – Arrival & check-in</li>
+              <li>• 9:00am – Opening ceremonies</li>
+              <li>• 10:00am – Hacking begins</li>
+              <li>• 11:00am – Waterloo workshop</li>
+              <li>• 12:00pm – Lunch</li>
+              <li>• 12:00pm - 5:00pm – Virtual VC support available</li>
+              <li>• 1:00pm – CoCalc workshop</li>
+              <li>• 2:00pm – Microsoft Reactor session</li>
+              <li>• 3:00pm – ClassZoo workshop</li>
+              <li>• 4:00pm – Konfer workshop</li>
+              <li>• 5:00pm – Athena AI contest</li>
+              <li>• 6:00pm – Dinner</li>
+              <li>• 7:00pm – Geoguessr tournament</li>
+              <li>• 8:00pm – Websockets workshop</li>
+              <li>• 9:00pm – Karaoke</li>
+              <li>• 10:00pm – Snacks</li>
+              <li>• 11:00pm – Spicy Ramen Challenge</li>
+            </ul>
           </div>
           <div className="rounded-2xl border border-gray-800 bg-gray-900/30 p-6 relative">
             <h3 className="text-2xl font-semibold">Sunday, October 26</h3>
