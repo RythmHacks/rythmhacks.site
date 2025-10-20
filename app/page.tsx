@@ -145,7 +145,7 @@ const sponsors = [
   },
   {
     name: "UWaterloo",
-    logo: "/UWaterloo.png",
+    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/University_of_Waterloo_seal.svg/1200px-University_of_Waterloo_seal.svg.png",
     url: "https://uwaterloo.ca/",
     bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600",
     padding: "p-6",
@@ -191,13 +191,6 @@ const sponsors = [
     url: "https://mapleleafventure.ca/",
     bgColor: "bg-gradient-to-br from-orange-200 to-red-300",
     padding: "p-0",
-  },
-  {
-    name: "Jukebox",
-    logo: "/jukebox.png",
-    url: "https://www.jukeboxprint.com/",
-    bgColor: "bg-gradient-to-br from-pink-500 to-fuchsia-600",
-    padding: "p-4",
   },
 ];
 
@@ -417,40 +410,8 @@ export default function Home() {
           {sponsors.map((sponsor) => (
             <div
               key={sponsor.name}
-              className={`group cursor-pointer ${
-                sponsor.name === "Jukebox"
-                  ? "col-span-2 flex items-center justify-center gap-8"
-                  : "flex flex-col items-center"
-              }`}
+              className="group cursor-pointer flex flex-col items-center"
             >
-              {sponsor.name === "Jukebox" && (
-                <div className="relative">
-                  <div className="absolute -top-2 -left-2 w-full h-full bg-gradient-to-r from-pink-500/30 to-purple-500/30 rounded-2xl animate-pulse"></div>
-                  <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-2xl border-2 border-pink-500/50 shadow-xl max-w-sm">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="bg-pink-400 rounded-full animate-pulse"></div>
-                      <div className="text-pink-400 font-bold text-lg">
-                        BIG SHOUTOUT!
-                      </div>
-                    </div>
-                    <p className="text-white font-semibold mb-2 text-sm">
-                      To Jukebox for our{" "}
-                      <a
-                        href="https://www.jukeboxprint.com/custom-stickers"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 hover:from-pink-300 hover:to-purple-300 underline decoration-2 decoration-pink-400/50 hover:decoration-pink-300/70 transition-all duration-300 font-bold"
-                      >
-                        custom stickers
-                      </a>{" "}
-                      at RythmHacks!
-                    </p>
-                    <div className="text-gray-400 text-xs italic">
-                      Code in style.
-                    </div>
-                  </div>
-                </div>
-              )}
               <a
                 href={sponsor.url}
                 target="_blank"
@@ -580,7 +541,22 @@ export default function Home() {
         id="Schedule"
         className="w-full px-10 py-16 z-10 mt-10 scroll-mt-24"
       >
-        <h2 className="text-7xl font-bold mb-6">Schedule</h2>
+        <div className="flex items-center mb-6">
+          <svg
+            width="35"
+            height="35"
+            viewBox="0 0 40 40"
+            className="drop-shadow-[0_0_10px_rgba(147,51,234,0.8)]"
+          >
+            <polygon
+              points="6,6 34,6 34,34 6,34"
+              fill="transparent"
+              stroke="rgb(147 51 234)"
+              strokeWidth="4"
+            />
+          </svg>
+          <h2 className="pl-2 text-7xl font-bold">Schedule</h2>
+        </div>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="rounded-2xl border border-gray-800 bg-gray-900/30 p-6">
             <h3 className="text-2xl font-semibold">Saturday, October 25</h3>
