@@ -190,7 +190,7 @@ const sponsors = [
     logo: "/MapleVenture.png",
     url: "https://mapleleafventure.ca/",
     bgColor: "#FFFFFF",
-    padding: "p-0",
+    padding: "p-6",
   },
   {
     name: "solderable",
