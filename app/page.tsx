@@ -189,14 +189,7 @@ const sponsors = [
     name: "maple leaf venture club",
     logo: "/MapleVenture.png",
     url: "https://mapleleafventure.ca/",
-    bgColor: "#FFFFFF",
-    padding: "p-0",
-  },
-  {
-    name: "solderable",
-    logo: "/solderable.png",
-    url: "https://solderable.dev/",
-    bgColor: "bg-gradient-to-br from-sky-100 to-blue-200",
+    bgColor: "bg-gradient-to-br from-orange-200 to-red-300",
     padding: "p-0",
   },
 ];
@@ -574,19 +567,25 @@ export default function Home() {
         </div>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="rounded-2xl border border-gray-800 bg-gray-900/30 p-6">
-            <h3 className="text-2xl font-semibold mb-4">Saturday, October 25</h3>
+            <h3 className="text-2xl font-semibold mb-4">
+              Saturday, October 25
+            </h3>
             <div className="space-y-3">
               {[
                 ["8:30am", "Arrival & check-in"],
                 ["9:00am", "Opening ceremonies"],
                 ["10:00am", "Hacking begins"],
-                ["11:00am", "Waterloo workshop"],
+                [
+                  "10:30am",
+                  "Google AI Studio Speaker: Madusha Cooray",
+                ],
+                ["11:30am", "Waterloo workshop"],
                 ["12:00pm", "Lunch"],
                 ["12:00pm - 5:00pm", "Virtual VC support available"],
                 ["1:00pm", "CoCalc workshop"],
                 ["2:00pm", "Microsoft Reactor session"],
-                ["3:00pm", "ClassZoo workshop"],
-                ["4:00pm", "Konfer workshop"],
+                ["3:00pm", "Konfer workshop"],
+                ["4:00pm", "ClassZoo workshop"],
                 ["5:00pm", "Athena AI contest"],
                 ["6:00pm", "Dinner"],
                 ["7:00pm", "Geoguessr tournament"],
@@ -595,9 +594,14 @@ export default function Home() {
                 ["10:00pm", "Snacks"],
                 ["11:00pm", "Spicy Ramen Challenge"],
               ].map(([time, event], idx) => (
-                <div key={idx} className="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800/70 rounded-lg p-4 border border-gray-700/50 transition-colors">
+                <div
+                  key={idx}
+                  className="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800/70 rounded-lg p-4 border border-gray-700/50 transition-colors"
+                >
                   <span className="text-gray-200 font-medium">{event}</span>
-                  <span className="text-purple-400 font-semibold text-sm">{time}</span>
+                  <span className="text-purple-400 font-semibold text-sm">
+                    {time}
+                  </span>
                 </div>
               ))}
             </div>
@@ -613,9 +617,14 @@ export default function Home() {
                 ["12:00pm", "Closing ceremonies"],
                 ["1:00pm", "Event concludes"],
               ].map(([time, event], idx) => (
-                <div key={idx} className="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800/70 rounded-lg p-4 border border-gray-700/50 transition-colors">
+                <div
+                  key={idx}
+                  className="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800/70 rounded-lg p-4 border border-gray-700/50 transition-colors"
+                >
                   <span className="text-gray-200 font-medium">{event}</span>
-                  <span className="text-purple-400 font-semibold text-sm">{time}</span>
+                  <span className="text-purple-400 font-semibold text-sm">
+                    {time}
+                  </span>
                 </div>
               ))}
             </div>
