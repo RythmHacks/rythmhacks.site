@@ -572,7 +572,7 @@ export default function Home() {
             </h3>
             <div className="space-y-3">
               {[
-                ["8:30am", "Arrival & check-in"],
+                ["7:30am", "Arrival & check-in"],
                 ["9:00am", "Opening ceremonies"],
                 ["10:00am", "Hacking begins"],
                 [
