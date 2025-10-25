@@ -189,7 +189,14 @@ const sponsors = [
     name: "maple leaf venture club",
     logo: "/MapleVenture.png",
     url: "https://mapleleafventure.ca/",
-    bgColor: "bg-gradient-to-br from-orange-200 to-red-300",
+    bgColor: "#FFFFFF",
+    padding: "p-0",
+  },
+  {
+    name: "solderable",
+    logo: "/solderable.png",
+    url: "https://solderable.dev/",
+    bgColor: "bg-gradient-to-br from-sky-100 to-blue-200",
     padding: "p-0",
   },
 ];
